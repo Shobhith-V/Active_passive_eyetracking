@@ -1,0 +1,23 @@
+================================================================================
+FREE VIEWING (BASELINE) vs VOICE CONDITION COMPARISON
+================================================================================
+
+Generated: 2025-12-27 09:26:24
+
+CONDITION SUMMARY:
+  Free Viewing (Baseline) trials: 0
+  Voice trials: 900
+  Free Viewing fixations: 15221
+  Voice fixations: 12150
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+Fixation Duration Comparisons:
+  subject AOI: Voice condition shows 3.1% longer fixations (11.0 ms) **
+    Effect size (Cohen's d): 0.032
+  object AOI: Voice condition shows 6.8% longer fixations (22.6 ms) **
+    Effect size (Cohen's d): 0.065
+  other AOI: Voice condition shows 0.1% longer fixations (0.2 ms) **
+    Effect size (Cohen's d): 0.001

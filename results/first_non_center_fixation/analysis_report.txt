@@ -1,0 +1,19 @@
+================================================================================
+FIRST NON-CENTER FIXATION ANALYSIS (Voice Condition)
+================================================================================
+
+Generated: 2025-12-27 09:46:31
+
+METHOD:
+  - Center threshold: 100 pixels from center (X=941, Y=499)
+  - Analyzed first fixation that is >100 pixels from center
+  - Total trials analyzed: 875
+
+KEY FINDING:
+  The first non-center fixation lands on 'object' AOI in 52.5% of trials
+  This is the most common first AOI after ignoring center fixations.
+
+DETAILED DISTRIBUTION:
+  Note: 'other' AOI has been recategorized as 'subject'
+  subject: 416 trials (47.5%)
+  object: 459 trials (52.5%)

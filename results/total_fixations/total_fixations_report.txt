@@ -1,0 +1,36 @@
+================================================================================
+TOTAL FIXATIONS BY AOI ANALYSIS (Voice Condition)
+================================================================================
+
+Generated: 2025-12-27 09:56:11
+
+NOTE: 'other' AOI has been recategorized as 'subject'
+
+SUMMARY:
+  Total fixations analyzed: 12,150
+  Total trials: 882
+
+TOTAL FIXATIONS BY AOI TYPE:
+  subject: 6,444 fixations (53.0%)
+  object: 5,706 fixations (47.0%)
+
+TOTAL FIXATIONS BY VOICE ID:
+
+  ACT:
+    Total fixations: 4,192
+    subject: 2,286 (54.5%)
+    object: 1,906 (45.5%)
+
+  PNA:
+    Total fixations: 3,983
+    subject: 2,074 (52.1%)
+    object: 1,909 (47.9%)
+
+  PWA:
+    Total fixations: 3,975
+    subject: 2,084 (52.4%)
+    object: 1,891 (47.6%)
+
+AVERAGE FIXATIONS PER TRIAL:
+  object: M=6.64, Median=6.00
+  subject: M=7.42, Median=7.00

@@ -1,0 +1,4 @@
+voice_type,aoi_type,n,mean_duration,median_duration,sd_duration,min_duration,max_duration
+unknown,object,12846,343.42978359022266,248.0,345.9886931694079,5,4993
+unknown,other,3648,262.843475877193,210.0,264.67097682467477,2,3595
+unknown,subject,10877,354.72400478072996,246.0,348.7093213975877,2,4695

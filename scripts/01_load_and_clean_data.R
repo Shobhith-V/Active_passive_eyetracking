@@ -106,7 +106,11 @@ for (i in seq_along(fixation_files)) {
   })
 }
 
-# Combine all fixation data
+# Combine all fixation data (filter out NULL entries)
+fixation_data_list <- fixation_data_list[!sapply(fixation_data_list, is.null)]
+if (length(fixation_data_list) == 0) {
+  stop("No fixation data was successfully loaded. Please check your data files.")
+}
 fixation_data <- bind_rows(fixation_data_list)
 cat(sprintf("Total fixation records: %d\n", nrow(fixation_data)))
 
@@ -177,7 +181,11 @@ for (i in seq_along(interest_area_files)) {
   })
 }
 
-# Combine all interest area data
+# Combine all interest area data (filter out NULL entries)
+interest_area_data_list <- interest_area_data_list[!sapply(interest_area_data_list, is.null)]
+if (length(interest_area_data_list) == 0) {
+  stop("No interest area data was successfully loaded. Please check your data files.")
+}
 interest_area_data <- bind_rows(interest_area_data_list)
 cat(sprintf("Total interest area records: %d\n", nrow(interest_area_data)))
 
@@ -253,7 +261,11 @@ for (i in seq_along(saccade_files)) {
   })
 }
 
-# Combine all saccade data
+# Combine all saccade data (filter out NULL entries)
+saccade_data_list <- saccade_data_list[!sapply(saccade_data_list, is.null)]
+if (length(saccade_data_list) == 0) {
+  stop("No saccade data was successfully loaded. Please check your data files.")
+}
 saccade_data <- bind_rows(saccade_data_list)
 cat(sprintf("Total saccade records: %d\n", nrow(saccade_data)))
 
@@ -271,15 +283,9 @@ participant_metadata <- data.frame(
   stringsAsFactors = FALSE
 ) %>%
   mutate(
-    n_fixation_files = sapply(participant_id, function(id) {
-      sum(fixation_data$participant_id == id, na.rm = TRUE) > 0
-    }),
-    n_interest_area_files = sapply(participant_id, function(id) {
-      sum(interest_area_data$participant_id == id, na.rm = TRUE) > 0
-    }),
-    n_saccade_files = sapply(participant_id, function(id) {
-      sum(saccade_data$participant_id == id, na.rm = TRUE) > 0
-    })
+    has_fixation_data = participant_id %in% unique(fixation_data$participant_id),
+    has_interest_area_data = participant_id %in% unique(interest_area_data$participant_id),
+    has_saccade_data = participant_id %in% unique(saccade_data$participant_id)
   )
 
 write.csv(participant_metadata, "data/processed/participant_metadata.csv", row.names = FALSE)

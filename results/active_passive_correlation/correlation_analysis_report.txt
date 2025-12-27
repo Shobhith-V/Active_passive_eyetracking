@@ -1,0 +1,38 @@
+================================================================================
+ACTIVE/PASSIVE VOICE AND FIRST FIXATION CORRELATION ANALYSIS
+================================================================================
+
+Generated: 2025-12-27 10:00:55
+
+HYPOTHESIS:
+  Testing whether active vs passive voice influences which AOI
+  receives the first non-center fixation.
+
+DATA:
+  Total trials analyzed: 875
+  Active voice trials: 293
+  Passive voice trials: 582
+
+CONTINGENCY TABLE:
+aoi_type             object  subject
+voice_type_category                 
+Active                  149      144
+Passive                 310      272
+
+
+ROW PERCENTAGES:
+aoi_type             object  subject
+voice_type_category                 
+Active                 50.9     49.1
+Passive                53.3     46.7
+
+
+STATISTICAL RESULTS:
+  Chi-square test: χ² = 0.3628, p = 0.5469
+  Result: NO significant association between voice type and first fixation AOI
+  Effect size (Cramér's V): 0.0204
+  Interpretation: Small effect size
+
+KEY FINDINGS:
+  1. No significant difference in first fixation patterns between Active and Passive voice
+  2. First fixation AOI distribution is similar regardless of voice type

@@ -161,3 +161,5 @@ if ("saccade_transition" %in% names(saccade_clean)) {
 
 cat("\nVisualizations complete! Plots saved to plots/exploratory/\n")
 
+
+

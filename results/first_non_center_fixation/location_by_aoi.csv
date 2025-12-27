@@ -1,0 +1,3 @@
+aoi_type,CURRENT_FIX_X_mean,CURRENT_FIX_X_median,CURRENT_FIX_X_std,CURRENT_FIX_Y_mean,CURRENT_FIX_Y_median,CURRENT_FIX_Y_std,distance_from_center_mean,distance_from_center_median,distance_from_center_std
+object,917.12,917.6,139.85,564.96,576.5,129.0,191.11,179.34,67.59
+subject,898.75,900.05,136.34,420.0,386.8,135.61,188.85,160.37,96.04

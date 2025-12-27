@@ -68,22 +68,27 @@ write.csv(trial_missing, "results/data_quality/trial_missing_data.csv", row.name
 # %% Identify outliers in fixation duration
 cat("\nIdentifying outliers in fixation duration...\n")
 
-fixation_outliers <- merged_fixation_data %>%
-  filter(!is.na(CURRENT_FIX_DURATION)) %>%
-  mutate(
-    # Standard outlier detection using IQR
-    q1 = quantile(CURRENT_FIX_DURATION, 0.25, na.rm = TRUE),
-    q3 = quantile(CURRENT_FIX_DURATION, 0.75, na.rm = TRUE),
-    iqr = q3 - q1,
-    lower_bound = q1 - 3 * iqr,  # Using 3*IQR for more conservative detection
-    upper_bound = q3 + 3 * iqr,
-    is_outlier = CURRENT_FIX_DURATION < lower_bound | CURRENT_FIX_DURATION > upper_bound
-  ) %>%
-  filter(is_outlier)
+# Calculate IQR bounds once (not per row)
+fixation_filtered <- merged_fixation_data %>% filter(!is.na(CURRENT_FIX_DURATION))
+if (nrow(fixation_filtered) > 0) {
+  q1 <- quantile(fixation_filtered$CURRENT_FIX_DURATION, 0.25, na.rm = TRUE)
+  q3 <- quantile(fixation_filtered$CURRENT_FIX_DURATION, 0.75, na.rm = TRUE)
+  iqr <- q3 - q1
+  lower_bound <- q1 - 3 * iqr  # Using 3*IQR for more conservative detection
+  upper_bound <- q3 + 3 * iqr
+  
+  fixation_outliers <- fixation_filtered %>%
+    mutate(
+      is_outlier = CURRENT_FIX_DURATION < lower_bound | CURRENT_FIX_DURATION > upper_bound
+    ) %>%
+    filter(is_outlier)
+} else {
+  fixation_outliers <- fixation_filtered
+}
 
 cat(sprintf("Fixation duration outliers: %d (%.2f%%)\n",
             nrow(fixation_outliers),
-            100 * nrow(fixation_outliers) / nrow(merged_fixation_data)))
+            ifelse(nrow(merged_fixation_data) > 0, 100 * nrow(fixation_outliers) / nrow(merged_fixation_data), 0)))
 
 # Check for impossible values (negative durations, extremely long durations)
 impossible_fixations <- merged_fixation_data %>%
@@ -98,21 +103,27 @@ cat(sprintf("Impossible fixation values: %d\n", nrow(impossible_fixations)))
 # %% Identify outliers in saccade metrics
 cat("\nIdentifying outliers in saccade metrics...\n")
 
-saccade_outliers <- merged_saccade_data %>%
-  filter(!is.na(CURRENT_SAC_AMPLITUDE)) %>%
-  mutate(
-    q1 = quantile(CURRENT_SAC_AMPLITUDE, 0.25, na.rm = TRUE),
-    q3 = quantile(CURRENT_SAC_AMPLITUDE, 0.75, na.rm = TRUE),
-    iqr = q3 - q1,
-    lower_bound = q1 - 3 * iqr,
-    upper_bound = q3 + 3 * iqr,
-    is_outlier = CURRENT_SAC_AMPLITUDE < lower_bound | CURRENT_SAC_AMPLITUDE > upper_bound
-  ) %>%
-  filter(is_outlier)
+# Calculate IQR bounds once (not per row)
+saccade_filtered <- merged_saccade_data %>% filter(!is.na(CURRENT_SAC_AMPLITUDE))
+if (nrow(saccade_filtered) > 0) {
+  q1 <- quantile(saccade_filtered$CURRENT_SAC_AMPLITUDE, 0.25, na.rm = TRUE)
+  q3 <- quantile(saccade_filtered$CURRENT_SAC_AMPLITUDE, 0.75, na.rm = TRUE)
+  iqr <- q3 - q1
+  lower_bound <- q1 - 3 * iqr
+  upper_bound <- q3 + 3 * iqr
+  
+  saccade_outliers <- saccade_filtered %>%
+    mutate(
+      is_outlier = CURRENT_SAC_AMPLITUDE < lower_bound | CURRENT_SAC_AMPLITUDE > upper_bound
+    ) %>%
+    filter(is_outlier)
+} else {
+  saccade_outliers <- saccade_filtered
+}
 
 cat(sprintf("Saccade amplitude outliers: %d (%.2f%%)\n",
             nrow(saccade_outliers),
-            100 * nrow(saccade_outliers) / nrow(merged_saccade_data)))
+            ifelse(nrow(merged_saccade_data) > 0, 100 * nrow(saccade_outliers) / nrow(merged_saccade_data), 0)))
 
 # Check for impossible saccade values
 impossible_saccades <- merged_saccade_data %>%
@@ -234,4 +245,6 @@ cat("\n=== Data Quality Summary ===\n")
 print(quality_report)
 cat("\nData quality checks complete!\n")
 cat("Reports saved to results/data_quality/\n")
+
+
 

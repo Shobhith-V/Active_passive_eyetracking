@@ -1,0 +1,12 @@
+check,count,percentage
+Total fixation records,27545,100.0
+Fixation duration outliers,1061,3.85
+Impossible fixation values,174,0.63
+Total interest area records,4224,100.0
+Total saccade records,23821,100.0
+Saccade amplitude outliers,212,0.89
+Impossible saccade values,68,0.29
+Trials with inconsistent voice_id,0,0.0
+Trials with missing voice_id,966,51.77
+Total participants,49,100.0
+Total trials,1866,100.0

@@ -227,3 +227,5 @@ cat(sprintf("Trial summaries: %d\n", nrow(trial_summary)))
 cat(sprintf("Trial saccade summaries: %d\n", nrow(trial_saccade_summary)))
 cat("\nVariable creation complete!\n")
 
+
+

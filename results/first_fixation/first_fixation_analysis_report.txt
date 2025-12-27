@@ -1,0 +1,36 @@
+================================================================================
+FIRST FIXATION LOCATION ANALYSIS REPORT
+================================================================================
+
+Generated: 2025-12-27 09:34:39
+
+EXECUTIVE SUMMARY:
+  Total first fixations analyzed: 1848
+  Unique images: 18
+  Mean X coordinate: 950 pixels
+  Mean Y coordinate: 529 pixels
+  Estimated screen center: X=955, Y=532
+
+KEY FINDINGS:
+  1. First fixations show variation across images
+  2. Mean distance from center: 49 pixels
+  3. X coordinate range: 147 - 1495 pixels
+  4. Y coordinate range: 51 - 1275 pixels
+
+CONDITION COMPARISON:
+  Free Viewing:
+    X: M=950, SD=54
+    Y: M=532, SD=60
+  Voice:
+    X: M=949, SD=72
+    Y: M=526, SD=66
+
+QUADRANT DISTRIBUTION:
+  Free Viewing - Bottom-Left: 25.5% (246 fixations)
+  Free Viewing - Bottom-Right: 27.3% (264 fixations)
+  Free Viewing - Top-Left: 23.6% (228 fixations)
+  Free Viewing - Top-Right: 23.6% (228 fixations)
+  Voice - Bottom-Left: 25.4% (224 fixations)
+  Voice - Bottom-Right: 21.4% (189 fixations)
+  Voice - Top-Left: 25.6% (226 fixations)
+  Voice - Top-Right: 27.6% (243 fixations)

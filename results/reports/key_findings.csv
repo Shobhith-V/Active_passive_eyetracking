@@ -1,0 +1,6 @@
+finding_number,finding
+1,Data quality is good with only 3.85% fixation outliers
+2,Saccade data quality is acceptable with 0.89% outliers
+3,High rate of missing voice_id: 51.8% of trials
+4,  Recommendation: Investigate voice_id encoding in source data
+5,Dominant AOI type: object (46.9% of fixations)

@@ -1,0 +1,5 @@
+recommendation_number,recommendation
+1,Investigate and fix voice_id encoding - over 30% of trials are missing this critical variable
+2,Review fixation duration outliers and consider excluding extreme values (>3 SD from mean)
+3,Proceed with statistical modeling (GAMM) to examine voice type effects on eye-tracking measures
+4,Consider including participant-level random effects in models to account for individual differences

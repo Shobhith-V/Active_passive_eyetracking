@@ -178,3 +178,5 @@ cat(sprintf("Merged interest area records: %d\n", nrow(merged_interest_area_data
 cat(sprintf("Merged saccade records: %d\n", nrow(merged_saccade_data)))
 cat("\nData merging complete!\n")
 
+
+

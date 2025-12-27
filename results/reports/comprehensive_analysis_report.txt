@@ -1,0 +1,138 @@
+================================================================================
+EYE-TRACKING ANALYSIS REPORT
+================================================================================
+
+Generated: 2025-12-27 09:12:09
+
+
+================================================================================
+1. EXECUTIVE SUMMARY
+================================================================================
+
+This analysis examined eye-tracking data from 49 participants.
+Total trials analyzed: 1,866
+Total fixations recorded: 27,545
+Total saccades recorded: 23,821
+
+Participants with complete data (fixation, interest area, saccade): 49/49 (100.0%)
+
+================================================================================
+2. DATA QUALITY ASSESSMENT
+================================================================================
+
+Total fixation records: 27,545
+Fixation duration outliers: 1,061 (3.85%)
+Impossible fixation values: 174 (0.63%)
+Total interest area records: 4,224
+Total saccade records: 23,821
+Saccade amplitude outliers: 212 (0.89%)
+Impossible saccade values: 68 (0.29%)
+Trials with inconsistent voice_id: 0
+Trials with missing voice_id: 966 (51.77%)
+Total participants: 49
+Total trials: 1,866
+
+Outlier Summary:
+  - Fixation duration outliers: 1,061 (3.85%)
+  - Saccade amplitude outliers: 212 (0.89%)
+
+Data quality assessment: GOOD - Outlier rates are within acceptable limits (<5%)
+
+================================================================================
+3. FIXATION ANALYSIS
+================================================================================
+
+Overall Fixation Duration Statistics (ms):
+  Mean: 337.18
+  Median: 240.00
+  Standard Deviation: 338.69
+  Range: 2.00 - 4993.00
+
+Fixation Duration by AOI Type:
+  object:
+    Mean: 343.43 ms, Median: 248.00 ms
+    SD: 345.99 ms, Count: 12,846
+  other:
+    Mean: 262.84 ms, Median: 210.00 ms
+    SD: 264.67 ms, Count: 3,648
+  subject:
+    Mean: 354.72 ms, Median: 246.00 ms
+    SD: 348.71 ms, Count: 10,877
+
+================================================================================
+4. INTEREST AREA (AOI) ANALYSIS
+================================================================================
+
+AOI Summary Statistics:
+voice_type aoi_type  total_fixations  total_duration  mean_duration  pct_fixations  pct_duration
+   unknown   object            12846         4411699     343.429784      46.932885     47.803164
+   unknown    other             3648          958853     262.843476      13.327975     10.389695
+   unknown  subject            10877         3858333     354.724005      39.739140     41.807141
+
+Voice Type: unknown
+  object: 46.9% of fixations, 47.8% of duration
+  other: 13.3% of fixations, 10.4% of duration
+  subject: 39.7% of fixations, 41.8% of duration
+
+================================================================================
+5. SACCADE ANALYSIS
+================================================================================
+
+Overall Saccade Statistics:
+  Mean Amplitude: 3.02 degrees
+  Mean Duration: 49.11 ms
+  Mean Velocity: 110.77 deg/s
+
+Saccade Statistics by Voice Type:
+voice_type     n  mean_amplitude  mean_duration  mean_velocity
+   unknown 23724        3.020969      49.114891     110.774921
+
+================================================================================
+6. PARTICIPANT VARIABILITY
+================================================================================
+
+Variability in Fixation Duration Across Participants:
+voice_type aoi_type  n_participants  mean_across_participants  sd_across_participants
+   unknown   object              49                352.893547               80.024756
+   unknown    other              49                267.280778               62.978339
+   unknown  subject              49                366.271912               92.542130
+
+Coefficient of Variation (CV = SD/Mean * 100):
+  unknown - object: 22.7%
+  unknown - other: 23.6%
+  unknown - subject: 25.3%
+
+================================================================================
+7. KEY FINDINGS
+================================================================================
+
+1. Data quality is good with only 3.85% fixation outliers
+2. Saccade data quality is acceptable with 0.89% outliers
+3. High rate of missing voice_id: 51.8% of trials
+4.   Recommendation: Investigate voice_id encoding in source data
+5. Dominant AOI type: object (46.9% of fixations)
+
+================================================================================
+8. RECOMMENDATIONS
+================================================================================
+
+1. Investigate and fix voice_id encoding - over 30% of trials are missing this critical variable
+2. Review fixation duration outliers and consider excluding extreme values (>3 SD from mean)
+3. Proceed with statistical modeling (GAMM) to examine voice type effects on eye-tracking measures
+4. Consider including participant-level random effects in models to account for individual differences
+
+================================================================================
+9. DATA SUMMARY TABLE
+================================================================================
+
+                          Metric  Value
+              Total Participants     49
+ Participants with Complete Data     49
+                    Total Trials   1866
+                 Total Fixations  27545
+                  Total Saccades  23821
+           Fixation Outliers (%)  3.85%
+            Saccade Outliers (%)  0.89%
+Trials with Missing Voice ID (%)  51.8%
+     Mean Fixation Duration (ms) 337.18
+    Mean Saccade Amplitude (deg)   3.02

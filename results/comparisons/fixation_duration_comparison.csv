@@ -1,0 +1,7 @@
+condition,aoi_type,n,mean,median,std,q25,q75
+Free Viewing,object,7140,333.39,246.0,323.52,178.0,376.0
+Free Viewing,other,1993,262.73,218.0,254.37,152.0,292.0
+Free Viewing,subject,6088,349.89,240.0,351.52,168.75,388.0
+Voice,object,5706,356.0,251.0,371.85,180.0,396.0
+Voice,other,1655,262.98,202.0,276.65,142.0,295.5
+Voice,subject,4789,360.87,252.0,345.05,174.0,416.0
