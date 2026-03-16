@@ -1,7 +1,7 @@
 check,count,percentage
 Total fixation records,27545,100.0
 Fixation duration outliers,1061,3.85
-Impossible fixation values,174,0.63
+Impossible fixation values,151,0.55
 Total interest area records,4224,100.0
 Total saccade records,23821,100.0
 Saccade amplitude outliers,212,0.89

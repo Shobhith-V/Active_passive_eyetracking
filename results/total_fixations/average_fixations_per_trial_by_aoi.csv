@@ -1,3 +1,4 @@
 aoi_type,mean,median,std,count
-object,6.64,6.0,3.68,859
-subject,7.42,7.0,4.62,869
+object,6.64,6,3.68,859
+other,2.82,2,2.85,587
+subject,5.64,5,3.47,849

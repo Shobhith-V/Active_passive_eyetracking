@@ -1,4 +1,4 @@
-voice_id,object,subject
-ACT,1906,2286
-PNA,1909,2074
-PWA,1891,2084
+voice_id,object,other,subject
+ACT,1906,598,1688
+PNA,1909,568,1506
+PWA,1891,489,1595

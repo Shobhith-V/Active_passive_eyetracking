@@ -2,7 +2,7 @@
 EYE-TRACKING ANALYSIS REPORT
 ================================================================================
 
-Generated: 2025-12-27 09:12:09
+Generated: 2026-03-06 14:43:35
 
 
 ================================================================================
@@ -22,7 +22,7 @@ Participants with complete data (fixation, interest area, saccade): 49/49 (100.0
 
 Total fixation records: 27,545
 Fixation duration outliers: 1,061 (3.85%)
-Impossible fixation values: 174 (0.63%)
+Impossible fixation values: 151 (0.55%)
 Total interest area records: 4,224
 Total saccade records: 23,821
 Saccade amplitude outliers: 212 (0.89%)
@@ -65,14 +65,30 @@ Fixation Duration by AOI Type:
 
 AOI Summary Statistics:
 voice_type aoi_type  total_fixations  total_duration  mean_duration  pct_fixations  pct_duration
-   unknown   object            12846         4411699     343.429784      46.932885     47.803164
-   unknown    other             3648          958853     262.843476      13.327975     10.389695
-   unknown  subject            10877         3858333     354.724005      39.739140     41.807141
+    Active   object             1906          656702     344.544596      45.467557     46.880095
+    Active    other              598          142335     238.018395      14.265267     10.160892
+    Active  subject             1688          601775     356.501777      40.267176     42.959012
+   Passive   object             3800         1374606     361.738421      47.750691     49.199500
+   Passive    other             1057          292891     277.096500      13.282232     10.483070
+   Passive  subject             3101         1126446     363.252499      38.967077     40.317430
+   Unknown   object             7140         2380391     333.388095      46.908876     47.285052
+   Unknown    other             1993          523627     262.733066      13.093752     10.401539
+   Unknown  subject             6088         2130112     349.886991      39.997372     42.313409
 
-Voice Type: unknown
-  object: 46.9% of fixations, 47.8% of duration
-  other: 13.3% of fixations, 10.4% of duration
-  subject: 39.7% of fixations, 41.8% of duration
+Voice Type: Active
+  object: 45.5% of fixations, 46.9% of duration
+  other: 14.3% of fixations, 10.2% of duration
+  subject: 40.3% of fixations, 43.0% of duration
+
+Voice Type: Passive
+  object: 47.8% of fixations, 49.2% of duration
+  other: 13.3% of fixations, 10.5% of duration
+  subject: 39.0% of fixations, 40.3% of duration
+
+Voice Type: Unknown
+  object: 46.9% of fixations, 47.3% of duration
+  other: 13.1% of fixations, 10.4% of duration
+  subject: 40.0% of fixations, 42.3% of duration
 
 ================================================================================
 5. SACCADE ANALYSIS
@@ -84,8 +100,10 @@ Overall Saccade Statistics:
   Mean Velocity: 110.77 deg/s
 
 Saccade Statistics by Voice Type:
-voice_type     n  mean_amplitude  mean_duration  mean_velocity
-   unknown 23724        3.020969      49.114891     110.774921
+voice_type      n  mean_amplitude  mean_duration  mean_velocity
+    Active   3958        3.006620      52.165448     113.947985
+   Passive   7464        3.002836      54.121990     115.933002
+   Unknown  12302        3.036588      45.092105     106.621006
 
 ================================================================================
 6. PARTICIPANT VARIABILITY
@@ -93,14 +111,26 @@ voice_type     n  mean_amplitude  mean_duration  mean_velocity
 
 Variability in Fixation Duration Across Participants:
 voice_type aoi_type  n_participants  mean_across_participants  sd_across_participants
-   unknown   object              49                352.893547               80.024756
-   unknown    other              49                267.280778               62.978339
-   unknown  subject              49                366.271912               92.542130
+    Active   object              49                357.791872              119.653346
+    Active    other              49                254.001010               86.820678
+    Active  subject              49                366.683959              109.585733
+   Passive   object              49                377.020829               96.160968
+   Passive    other              49                275.208917               92.324822
+   Passive  subject              49                380.231217              105.434920
+   Unknown   object              49                344.196056               86.274846
+   Unknown    other              49                265.628611               71.925999
+   Unknown  subject              49                361.427264               97.463241
 
 Coefficient of Variation (CV = SD/Mean * 100):
-  unknown - object: 22.7%
-  unknown - other: 23.6%
-  unknown - subject: 25.3%
+  Active - object: 33.4%
+  Active - other: 34.2%
+  Active - subject: 29.9%
+  Passive - object: 25.5%
+  Passive - other: 33.5%
+  Passive - subject: 27.7%
+  Unknown - object: 25.1%
+  Unknown - other: 27.1%
+  Unknown - subject: 27.0%
 
 ================================================================================
 7. KEY FINDINGS
@@ -125,14 +155,14 @@ Coefficient of Variation (CV = SD/Mean * 100):
 9. DATA SUMMARY TABLE
 ================================================================================
 
-                          Metric  Value
-              Total Participants     49
- Participants with Complete Data     49
-                    Total Trials   1866
-                 Total Fixations  27545
-                  Total Saccades  23821
-           Fixation Outliers (%)  3.85%
-            Saccade Outliers (%)  0.89%
-Trials with Missing Voice ID (%)  51.8%
-     Mean Fixation Duration (ms) 337.18
-    Mean Saccade Amplitude (deg)   3.02
+                           Metric   Value
+               Total Participants      49
+  Participants with Complete Data      49
+                     Total Trials    1866
+                  Total Fixations   27545
+                   Total Saccades   23821
+            Fixation Outliers (%)   3.85%
+             Saccade Outliers (%)   0.89%
+ Trials with Missing Voice ID (%)   51.8%
+      Mean Fixation Duration (ms)  337.18
+     Mean Saccade Amplitude (deg)    3.02
