@@ -2,7 +2,7 @@
 TOTAL FIXATIONS BY AOI ANALYSIS (Voice Condition)
 ================================================================================
 
-Generated: 2026-03-06 14:44:43
+Generated: 2026-03-17 06:02:02
 
 NOTE: 'other' AOI has been recategorized as 'subject'
 

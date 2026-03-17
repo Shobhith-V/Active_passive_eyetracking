@@ -2,7 +2,7 @@
 EYE-TRACKING ANALYSIS REPORT
 ================================================================================
 
-Generated: 2026-03-06 14:43:35
+Generated: 2026-03-17 06:01:04
 
 
 ================================================================================
@@ -100,10 +100,10 @@ Overall Saccade Statistics:
   Mean Velocity: 110.77 deg/s
 
 Saccade Statistics by Voice Type:
-voice_type      n  mean_amplitude  mean_duration  mean_velocity
-    Active   3958        3.006620      52.165448     113.947985
-   Passive   7464        3.002836      54.121990     115.933002
-   Unknown  12302        3.036588      45.092105     106.621006
+voice_type     n  mean_amplitude  mean_duration  mean_velocity
+    Active  3958        3.006620      52.165448     113.947985
+   Passive  7464        3.002836      54.121990     115.933002
+   Unknown 12302        3.036588      45.092105     106.621006
 
 ================================================================================
 6. PARTICIPANT VARIABILITY
@@ -155,14 +155,14 @@ Coefficient of Variation (CV = SD/Mean * 100):
 9. DATA SUMMARY TABLE
 ================================================================================
 
-                           Metric   Value
-               Total Participants      49
-  Participants with Complete Data      49
-                     Total Trials    1866
-                  Total Fixations   27545
-                   Total Saccades   23821
-            Fixation Outliers (%)   3.85%
-             Saccade Outliers (%)   0.89%
- Trials with Missing Voice ID (%)   51.8%
-      Mean Fixation Duration (ms)  337.18
-     Mean Saccade Amplitude (deg)    3.02
+                          Metric  Value
+              Total Participants     49
+ Participants with Complete Data     49
+                    Total Trials   1866
+                 Total Fixations  27545
+                  Total Saccades  23821
+           Fixation Outliers (%)  3.85%
+            Saccade Outliers (%)  0.89%
+Trials with Missing Voice ID (%)  51.8%
+     Mean Fixation Duration (ms) 337.18
+    Mean Saccade Amplitude (deg)   3.02
