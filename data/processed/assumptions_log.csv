@@ -1,0 +1,11 @@
+topic,assumption,impact
+file_format,".xls reports are read as UTF-16 tab-delimited EyeLink text exports, with Excel fallback.",Preserves original export columns while allowing non-binary .xls files to load reproducibly.
+missing_values,"'.', 'UNDEFINED', empty strings, and pandas default NA markers are treated as missing.",Raw placeholder values become nulls in processed datasets and validation reports.
+sentence_type,exp_id/sentence/audio text containing ACT is active; PNA/noagent/woa is passive_dropped_agent; PWA/passive is passive.,Rows that cannot match these patterns remain null rather than being guessed.
+session_type,session_var containing free is free_viewing; experiment/sentence/audio is sentence_audio.,Unknown session values remain null.
+fixation_language_missing,12202 row(s) have unresolved language.,These rows are retained with null metadata for transparent downstream filtering.
+fixation_sentence_type_missing,12202 row(s) have unresolved sentence_type.,These rows are retained with null metadata for transparent downstream filtering.
+interest_area_language_missing,1836 row(s) have unresolved language.,These rows are retained with null metadata for transparent downstream filtering.
+interest_area_sentence_type_missing,1836 row(s) have unresolved sentence_type.,These rows are retained with null metadata for transparent downstream filtering.
+saccade_language_missing,11673 row(s) have unresolved language.,These rows are retained with null metadata for transparent downstream filtering.
+saccade_sentence_type_missing,11673 row(s) have unresolved sentence_type.,These rows are retained with null metadata for transparent downstream filtering.

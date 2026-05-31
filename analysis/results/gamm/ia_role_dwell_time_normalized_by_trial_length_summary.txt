@@ -1,0 +1,108 @@
+Model: ia_role_dwell_time_normalized_by_trial_length 
+Family: interest_area_language_by_sentence_type_by_role 
+Outcome: dwell_time_normalized_by_trial_length 
+
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+dwell_time_normalized_by_trial_length ~ language * sentence_type * 
+    aoi_role + s(participant_id, bs = "re") + s(image_id, bs = "re") + 
+    s(ia_label, bs = "re")
+
+Parametric coefficients:
+                                                                  Estimate
+(Intercept)                                                        0.41570
+languagePunjabi                                                    0.03016
+sentence_typepassive                                              -0.02231
+sentence_typepassive_dropped_agent                                -0.01643
+aoi_roleobject                                                     0.07962
+languagePunjabi:sentence_typepassive                               0.02726
+languagePunjabi:sentence_typepassive_dropped_agent                -0.03012
+languagePunjabi:aoi_roleobject                                    -0.05453
+sentence_typepassive:aoi_roleobject                                0.05090
+sentence_typepassive_dropped_agent:aoi_roleobject                  0.02731
+languagePunjabi:sentence_typepassive:aoi_roleobject               -0.07117
+languagePunjabi:sentence_typepassive_dropped_agent:aoi_roleobject  0.04276
+                                                                  Std. Error
+(Intercept)                                                          0.03657
+languagePunjabi                                                      0.02596
+sentence_typepassive                                                 0.02596
+sentence_typepassive_dropped_agent                                   0.02596
+aoi_roleobject                                                       0.05099
+languagePunjabi:sentence_typepassive                                 0.03671
+languagePunjabi:sentence_typepassive_dropped_agent                   0.03672
+languagePunjabi:aoi_roleobject                                       0.03671
+sentence_typepassive:aoi_roleobject                                  0.03671
+sentence_typepassive_dropped_agent:aoi_roleobject                    0.03671
+languagePunjabi:sentence_typepassive:aoi_roleobject                  0.05191
+languagePunjabi:sentence_typepassive_dropped_agent:aoi_roleobject    0.05193
+                                                                  t value
+(Intercept)                                                        11.367
+languagePunjabi                                                     1.162
+sentence_typepassive                                               -0.860
+sentence_typepassive_dropped_agent                                 -0.633
+aoi_roleobject                                                      1.562
+languagePunjabi:sentence_typepassive                                0.743
+languagePunjabi:sentence_typepassive_dropped_agent                 -0.820
+languagePunjabi:aoi_roleobject                                     -1.485
+sentence_typepassive:aoi_roleobject                                 1.387
+sentence_typepassive_dropped_agent:aoi_roleobject                   0.744
+languagePunjabi:sentence_typepassive:aoi_roleobject                -1.371
+languagePunjabi:sentence_typepassive_dropped_agent:aoi_roleobject   0.823
+                                                                  Pr(>|t|)    
+(Intercept)                                                         <2e-16 ***
+languagePunjabi                                                      0.245    
+sentence_typepassive                                                 0.390    
+sentence_typepassive_dropped_agent                                   0.527    
+aoi_roleobject                                                       0.119    
+languagePunjabi:sentence_typepassive                                 0.458    
+languagePunjabi:sentence_typepassive_dropped_agent                   0.412    
+languagePunjabi:aoi_roleobject                                       0.138    
+sentence_typepassive:aoi_roleobject                                  0.166    
+sentence_typepassive_dropped_agent:aoi_roleobject                    0.457    
+languagePunjabi:sentence_typepassive:aoi_roleobject                  0.171    
+languagePunjabi:sentence_typepassive_dropped_agent:aoi_roleobject    0.410    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Approximate significance of smooth terms:
+                        edf Ref.df      F  p-value    
+s(participant_id) 2.805e+01     49  1.339 8.64e-07 ***
+s(image_id)       1.119e-06     17  0.000        1    
+s(ia_label)       3.213e+01     34 17.156  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+R-sq.(adj) =  0.281   Deviance explained =   31%
+fREML = -31.929  Scale est. = 0.050508  n = 1800
+
+AIC:
+[1] -191.2806
+
+GAM check:
+
+Method: fREML   Optimizer: perf newton
+full convergence after 34 iterations.
+Gradient range [-4.763662e-07,2.619345e-10]
+(score -31.92868 & scale 0.05050772).
+Hessian positive definite, eigenvalue range [4.763661e-07,894.5153].
+Model rank =  116 / 116 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                        k'      edf k-index p-value
+s(participant_id) 5.00e+01 2.80e+01      NA      NA
+s(image_id)       1.80e+01 1.12e-06      NA      NA
+s(ia_label)       3.60e+01 3.21e+01      NA      NA
+$mfrow
+[1] 2 2
+
+
+Concurvity:
+         para s(participant_id) s(image_id) s(ia_label)
+worst       1        1.00000000           1  1.00000000
+observed    1        0.07893143           1  0.07672707
+estimate    1        0.11170694           1  0.52827179

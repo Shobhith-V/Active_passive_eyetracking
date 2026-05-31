@@ -1,0 +1,61 @@
+Model: agent_first_cognitive_load_index 
+Family: trial_language_by_agent_first 
+Outcome: cognitive_load_index 
+
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+cognitive_load_index ~ language * agent_first_alignment + s(participant_id, 
+    bs = "re") + s(image_id, bs = "re")
+
+Parametric coefficients:
+                                                      Estimate Std. Error
+(Intercept)                                           0.031094   0.047565
+languagePunjabi                                       0.006257   0.062450
+agent_first_alignmentnon_agent_first                 -0.052789   0.054083
+languagePunjabi:agent_first_alignmentnon_agent_first -0.008566   0.076485
+                                                     t value Pr(>|t|)
+(Intercept)                                            0.654    0.513
+languagePunjabi                                        0.100    0.920
+agent_first_alignmentnon_agent_first                  -0.976    0.329
+languagePunjabi:agent_first_alignmentnon_agent_first  -0.112    0.911
+
+Approximate significance of smooth terms:
+                        edf Ref.df     F p-value    
+s(participant_id) 2.402e+01     49 0.961 0.00013 ***
+s(image_id)       2.342e-05     17 0.000 0.82058    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+R-sq.(adj) =  0.049   Deviance explained = 7.76%
+fREML = 747.86  Scale est. = 0.2925    n = 900
+
+AIC:
+[1] 1479.45
+
+GAM check:
+
+Method: fREML   Optimizer: perf newton
+full convergence after 10 iterations.
+Gradient range [-3.69688e-06,8.011763e-06]
+(score 747.8619 & scale 0.2924973).
+Hessian positive definite, eigenvalue range [3.696886e-06,448.326].
+Model rank =  72 / 72 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                        k'      edf k-index p-value
+s(participant_id) 5.00e+01 2.40e+01      NA      NA
+s(image_id)       1.80e+01 2.34e-05      NA      NA
+$mfrow
+[1] 2 2
+
+
+Concurvity:
+         para s(participant_id)  s(image_id)
+worst       1       1.000000000 1.000000e+00
+observed    1       0.004508687 5.945903e-05
+estimate    1       0.024273262 5.633680e-02

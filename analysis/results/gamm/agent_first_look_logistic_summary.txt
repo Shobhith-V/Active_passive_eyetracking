@@ -1,0 +1,67 @@
+Model: agent_first_look_logistic 
+Family: first_aoi_visit_logistic 
+Outcome: agent_first_look 
+
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+agent_first_look ~ language * sentence_type + s(participant_id, 
+    bs = "re") + s(image_id, bs = "re")
+
+Parametric coefficients:
+                                                   Estimate Std. Error z value
+(Intercept)                                        -0.65419    0.35404  -1.848
+languagePunjabi                                     0.23895    0.27425   0.871
+sentence_typepassive                               -0.08855    0.27763  -0.319
+sentence_typepassive_dropped_agent                 -0.29555    0.28195  -1.048
+languagePunjabi:sentence_typepassive                0.49994    0.38664   1.293
+languagePunjabi:sentence_typepassive_dropped_agent  0.29993    0.39216   0.765
+                                                   Pr(>|z|)  
+(Intercept)                                          0.0646 .
+languagePunjabi                                      0.3836  
+sentence_typepassive                                 0.7498  
+sentence_typepassive_dropped_agent                   0.2945  
+languagePunjabi:sentence_typepassive                 0.1960  
+languagePunjabi:sentence_typepassive_dropped_agent   0.4444  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Approximate significance of smooth terms:
+                    edf Ref.df Chi.sq p-value    
+s(participant_id) 32.06     49  121.7  <2e-16 ***
+s(image_id)       15.61     17  187.7  <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+R-sq.(adj) =   0.31   Deviance explained = 28.4%
+fREML =    504  Scale est. = 1         n = 893
+
+AIC:
+[1] 965.8362
+
+GAM check:
+
+Method: fREML   Optimizer: perf newton
+full convergence after 5 iterations.
+Gradient range [-2.111879e-09,9.126007e-10]
+(score 503.9976 & scale 1).
+Hessian positive definite, eigenvalue range [6.712777,9.837947].
+Model rank =  74 / 74 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                    k'  edf k-index p-value
+s(participant_id) 50.0 32.1      NA      NA
+s(image_id)       18.0 15.6      NA      NA
+$mfrow
+[1] 2 2
+
+
+Concurvity:
+         para s(participant_id) s(image_id)
+worst       1      1.0000000000 1.000000000
+observed    1      0.0004701191 0.004543773
+estimate    1      0.0220462003 0.057129103

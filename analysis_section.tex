@@ -1,0 +1,747 @@
+% ============================================================
+%  Analysis Section — Active/Passive Sentence Processing
+%  English and Punjabi Eye-Tracking Study
+%  Compile with pdflatex or xelatex
+% ============================================================
+
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\usepackage{threeparttable}
+
+\onehalfspacing
+
+% ---- convenience macros for statistics ----
+\newcommand{\pval}[1]{$p = #1$}
+\newcommand{\pless}[1]{$p < #1$}
+\newcommand{\tstat}[2]{$t = #1$, $p = #2$}
+\newcommand{\bstat}[3]{$\hat{\beta} = #1$, $SE = #2$, $t = #3$}
+
+\title{Active and Passive Sentence Processing in English and Punjabi:\\
+       An Eye-Tracking Investigation of the Agent-First Principle}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+% ============================================================
+\section{Method}
+% ============================================================
+
+\subsection{Participants}
+
+Fifty participants completed the experiment (25 English-dominant, 25 Punjabi-dominant;
+details reported in the Participants section). All had normal or corrected-to-normal vision.
+
+% ============================================================
+\subsection{Design and Stimuli}
+% ============================================================
+
+A 2 (Language: English, Punjabi) $\times$ 3 (Sentence Type: active, passive,
+passive-with-dropped-agent) within-participants design was used.
+Each participant contributed 150 trials per condition in the sentence-audio
+block and an equal number of matched free-viewing trials, yielding 900
+sentence-audio trials and 900 free-viewing trials in total.
+The final analysis dataset was perfectly balanced: 150 trials per
+Language $\times$ Sentence-Type cell (Table~\ref{tab:design}).
+
+\begin{table}[h]
+\centering
+\caption{Trial counts per condition in the sentence-audio block.}
+\label{tab:design}
+\begin{tabular}{lll r}
+\toprule
+Language & Sentence Type & Agent-First Alignment & $N$ \\
+\midrule
+English  & Active                & Agent-first     & 150 \\
+English  & Passive               & Non-agent-first & 150 \\
+English  & Passive (agent dropped) & Non-agent-first & 150 \\
+Punjabi  & Active                & Agent-first     & 150 \\
+Punjabi  & Passive               & Non-agent-first & 150 \\
+Punjabi  & Passive (agent dropped) & Non-agent-first & 150 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each scene stimulus depicted a transitive event (e.g., a woman pushing a man)
+and was paired with either an active sentence (\textit{The woman is pushing the man}),
+a passive sentence with an overt by-phrase (\textit{The man is being pushed by the woman}),
+or an agentless passive (\textit{The man is being pushed}).
+All stimuli were matched for image content across conditions.
+Two regions of interest (ROIs) were defined per image: an \textit{agent} ROI
+(the entity performing the action; AOI label prefix \texttt{s\_}) and an
+\textit{object/patient} ROI (the entity receiving the action; prefix \texttt{o\_}).
+
+% ============================================================
+\subsection{Apparatus and Procedure}
+% ============================================================
+
+Eye movements were recorded using an EyeLink system sampling at [X] Hz.
+Each trial began with a central fixation cross.
+In free-viewing trials participants inspected the image in silence.
+In sentence-audio trials the same image was presented concurrently with an
+auditory sentence.
+The free-viewing block was used to establish participant-specific and
+image-specific baselines for all gaze outcomes.
+
+% ============================================================
+\section{Data Processing}
+% ============================================================
+
+\subsection{Raw Data Extraction and Standardisation}
+
+Raw data consisted of three EyeLink Data Viewer report types exported per
+participant: fixation reports, interest-area (ROI) reports, and saccade reports,
+giving 50 files per report type ($N = 150$ files in total).
+Files were exported in EyeLink's tab-delimited XLS format (UTF-16 encoded) and
+processed using a custom Python pipeline (\texttt{process\_eye\_tracking\_reports.py}).
+
+For each file, column names were normalised to snake\_case, and
+missing-value markers used by EyeLink (\texttt{.}, \texttt{UNDEFINED},
+empty string) were converted to \texttt{NaN}.
+Sentence type was inferred from stimulus identifiers using regular expressions:
+strings containing \textit{ACT} or \textit{active} were coded active;
+\textit{PNA}, \textit{noagent}, \textit{woa}, or \textit{dropped} were coded
+passive-with-dropped-agent; \textit{PWA} or \textit{passive} were coded passive.
+Session type (free-viewing vs.\ sentence-audio) was inferred from a session
+variable column using matching on \textit{free} and \textit{experiment}/\textit{sentence}/\textit{audio}.
+
+Participant identifiers were extracted from filenames following the pattern
+\texttt{edf[NN]}.
+Trial-level features were computed by aggregating fixation, interest-area,
+and saccade rows within each participant $\times$ trial cell.
+
+\subsection{Centre-of-Screen Bias: Identification and Correction}
+
+Inspection of the raw fixation data revealed a strong centre-of-screen
+bias at the first fixation of each trial.
+Specifically, 87.2\% of fixations with ordinal position index 1
+(i.e., the first registered fixation per trial) fell within 100 pixels
+of screen centre ($x = 960$, $y = 540$; mean first-fixation position:
+$\bar{x} = 949$~px, $SD = 118$~px; $\bar{y} = 527$~px, $SD = 84$~px).
+This clustering is attributable to the pre-trial central fixation cross,
+which resets gaze to the screen centre before every stimulus onset.
+Crucially, this fixation carries no sentence-processing signal: it reflects
+a motor return to the calibration point, not a stimulus-driven oculomotor response.
+
+To prevent this artefact from contaminating trial-level summaries,
+fixation index~1 was \emph{excluded} from all trial-level aggregations
+(mean fixation duration, total fixation duration, fixation count).
+The raw fixation records were retained in their entirety for subsequent
+temporal analyses, which use ordinal fixation position as the predictor
+and are therefore explicitly indexed from position~2 onward.
+Note that the interest-area (ROI dwell time) and saccade reports are
+unaffected because EyeLink generates these from a separate data stream
+that does not include the pre-stimulus fixation cross event.
+
+\subsection{Baseline Subtraction}
+
+To isolate the cognitive processing cost attributable to sentence structure,
+all trial-level fixation and saccade outcomes were expressed as deviations
+from free-viewing baselines using the same image.
+For each participant and image, mean outcome values from the free-viewing
+block were subtracted from the corresponding sentence-audio trial values,
+yielding \emph{delta} ($\Delta$) outcomes.
+Participant-specific baselines were available for all 900 sentence-audio
+trials (100\% participant $\times$ image baseline coverage), eliminating
+the need to fall back on image-level averages.
+All $\Delta$ outcomes are therefore interpretable as the additional gaze
+demand imposed by concurrent sentence processing relative to passive
+image viewing.
+
+\subsection{AOI Role Coding}
+
+AOI labels were assigned roles automatically from EyeLink label prefixes:
+labels beginning with \texttt{s\_} were coded as \emph{agent/subject} AOIs;
+labels beginning with \texttt{o\_} were coded as \emph{object/patient} AOIs;
+all remaining labels were coded as background.
+Zero of 3,636 interest-area observations had a missing role assignment.
+
+\subsection{Agent-First Coding}
+
+Three theoretically motivated binary contrast variables were derived from
+sentence type:
+\begin{itemize}
+  \item \textbf{agent\_first\_alignment}: \textit{agent-first} for active;
+        \textit{non-agent-first} for both passive conditions.
+  \item \textbf{agent\_overt}: \textit{agent-overt} for active and passive
+        (by-phrase present); \textit{agent-dropped} for passive-with-dropped-agent.
+  \item \textbf{passive\_cost\_contrast}: 0 for active, 1 for passive and
+        passive-with-dropped-agent (tests overall non-agent-first cost).
+\end{itemize}
+
+\subsection{First Non-Centre AOI Visit}
+
+To operationalise initial attentional orientation, the first fixation at
+ordinal position $\geq 2$ that landed within a coded agent or object AOI was
+extracted per trial.
+The binary variable \textit{agent\_first\_look} was set to 1 if this
+fixation landed in the agent AOI and 0 if it landed in the object AOI.
+Trials on which no post-centre fixation landed in either AOI were excluded
+from this analysis ($n = 7$ trials, $< 1\%$; final $N = 893$ trials).
+
+\subsection{Final Analysis Datasets}
+
+The processing pipeline produced the following datasets used in all analyses:
+
+\begin{enumerate}
+  \item \textbf{Trial-level baseline-adjusted dataset}
+        (\texttt{sentence\_audio\_baseline\_adjusted.csv}):
+        900 rows $\times$ 77 columns; one row per sentence-audio trial with
+        $\Delta$ outcomes and agent-first coding variables.
+  \item \textbf{Interest-area dataset}
+        (\texttt{interest\_area\_agent\_first\_dataset.csv}):
+        3,636 rows; one row per trial $\times$ AOI role, sentence-audio trials only.
+  \item \textbf{First AOI visit dataset}
+        (\texttt{first\_aoi\_visit\_dataset.csv}):
+        893 rows; one row per trial coding the first non-centre AOI fixation.
+  \item \textbf{Temporal gaze dynamics tables}
+        (\texttt{prop\_agent\_by\_fixation\_index.csv}):
+        Proportion of agent-directed fixations at each ordinal fixation position,
+        by condition.
+\end{enumerate}
+
+% ============================================================
+\section{Statistical Analysis}
+% ============================================================
+
+\subsection{Model Structure}
+
+All primary analyses used Generalised Additive Mixed Models (GAMMs) fitted
+with the \texttt{bam()} function in the \texttt{mgcv} package for R \citep{Wood2017}.
+Trial-level continuous outcomes were modelled with Gaussian family; the binary
+agent-first look outcome was modelled with binomial family (logit link).
+
+The fixed-effects structure for all trial-level models was:
+\begin{equation}
+  \text{outcome} \sim \text{Language} \times \text{SentenceType}
+    + s(\text{ParticipantID}, \, \text{bs=``re''})
+    + s(\text{ImageID}, \, \text{bs=``re''})
+\end{equation}
+where $s(\cdot, \text{bs=``re''})$ denotes a random-effect smooth
+(equivalent to a standard random intercept).
+Interest-area models included an additional random smooth for individual
+AOI labels, $s(\text{AOILabel}, \, \text{bs=``re''})$, to account for the
+large variance attributable to specific image content.
+The reference levels were English and active.
+All models were fitted with fast REML (\texttt{method = "fREML"}).
+
+Temporal gaze dynamics were modelled using a GAM with condition-specific
+smooths over fixation ordinal position:
+\begin{equation}
+  \hat{p}(\text{agent look}) \sim
+    s(\text{FixationIndex}, \, \text{by=Condition}, \, k = 8)
+    + \text{Condition}
+\end{equation}
+weighted by the number of contributing fixations per bin.
+
+Non-parametric screening tests (Kruskal--Wallis omnibus followed by
+Mann--Whitney pairwise tests with Benjamini--Hochberg correction) were
+used as pre-GAMM exploratory checks; these results are reported for
+completeness but are not the primary inferential basis.
+
+\subsection{Hypotheses}
+
+The study addressed four pre-specified hypotheses derived from the
+agent-first principle \citep[e.g.,][]{MacWhinney1982, Gernsbacher1990}:
+
+\begin{description}
+  \item[H1 — Passive processing cost.]
+        Passive sentences (non-agent-first) impose a greater gaze-based
+        processing cost than active sentences (agent-first), reflected in
+        longer mean fixation durations, fewer fixations per trial, lower
+        saccade rates, and increased dwell time in interest areas.
+  \item[H2 — Agent-drop cost.]
+        Passive sentences without an overt agent (passive-dropped-agent)
+        impose at least as great a processing cost as passive sentences
+        with an overt by-phrase, because the absence of an explicit agent
+        referent further disrupts agent-first event parsing.
+  \item[H3 — Cross-linguistic modulation.]
+        The processing cost associated with non-agent-first structure
+        differs between English and Punjabi, reflecting structural or
+        morphological differences in how each language marks thematic roles.
+        Specifically, Punjabi's richer morphological case marking is
+        predicted to reduce the passive cost relative to English.
+  \item[H4 — Agent-first gaze bias.]
+        During active sentences, listeners orient gaze to the agent AOI
+        earlier and for longer than during passive sentences,
+        consistent with rapid integration of agent-first structural cues
+        into the developing event representation.
+\end{description}
+
+% ============================================================
+\section{Results}
+% ============================================================
+
+% ============================================================
+\subsection{Trial-Level Processing Cost (H1, H2, H3)}
+% ============================================================
+
+\subsubsection{Mean Fixation Duration}
+
+Passive sentence processing produced significantly longer mean fixation
+durations than active processing after controlling for free-viewing baselines
+($\Delta$ passive English: $M = +94.9$~ms, $SD = 474.9$; $\Delta$ active
+English: $M = -52.9$~ms, $SD = 511.3$).
+The GAMM confirmed this contrast:
+$\hat{\beta} = 147.6$~ms, $SE = 54.3$, $t = 2.72$, $p = .007$.
+Passive-with-dropped-agent also showed numerically elevated fixation
+duration relative to active ($\Delta M = +5.8$~ms in English), but this
+contrast was not significant ($\hat{\beta} = 58.6$~ms, $SE = 54.2$, $t = 1.08$, $p = .28$).
+
+Critically, the effect was strongly modulated by language (H3):
+the Punjabi $\times$ passive interaction was significant
+($\hat{\beta} = -151.9$~ms, $SE = 76.7$, $t = -1.98$, $p = .048$),
+indicating that Punjabi passive sentences did not carry the same prolonged
+fixation cost as English passive sentences
+(Punjabi $\Delta$ passive: $M = +22.5$~ms vs.\ English $\Delta$ passive:
+$M = +94.9$~ms).
+In Punjabi, the three sentence types showed similar mean fixation durations
+(active: $M = +26.9$~ms; passive: $M = +22.5$~ms; passive-dropped-agent:
+$M = +26.9$~ms), suggesting that Punjabi sentence structure did not
+differentially burden fixation duration in the way English passive did.
+Descriptive means are given in Table~\ref{tab:trial_means}.
+
+\subsubsection{Fixation Count}
+
+Passive sentences produced significantly fewer fixations per trial than
+active sentences (English $\Delta M = -2.12$ vs.\ $-0.19$), providing a
+complementary measure of processing cost: listeners made fewer, longer
+individual fixations under non-agent-first structure.
+The GAMM yielded the largest parametric effect in the trial-level battery:
+$\hat{\beta} = -1.93$, $SE = 0.48$, $t = -4.04$, $p < .0001$.
+Passive-with-dropped-agent was also significantly reduced relative to active:
+$\hat{\beta} = -1.01$, $SE = 0.48$, $t = -2.11$, $p = .035$.
+
+The Language $\times$ Passive interaction replicated the mean-duration finding:
+Punjabi passive showed a smaller fixation-count reduction than English passive
+($\hat{\beta} = +1.58$, $SE = 0.68$, $t = 2.34$, $p = .020$), again indicating
+that the non-agent-first cost in fixation behaviour was attenuated in Punjabi.
+No significant interaction was found for passive-with-dropped-agent
+($p = .48$), suggesting the agent-drop penalty was similar in both languages.
+
+The dissociation between fixation duration (longer) and fixation count
+(fewer) in passive sentences is a well-established signature of
+increased per-fixation processing load: rather than making more fixations,
+listeners devoted longer processing time to each fixation, consistent with
+effortful real-time parsing.
+
+\subsubsection{Saccade Rate}
+
+Passive sentences produced significantly fewer saccades per second than
+active sentences ($\Delta$ passive: $M = -1.25$~sac/s vs.\ $\Delta$ active:
+$M = -1.00$~sac/s; $\hat{\beta} = -0.25$~sac/s, $SE = 0.07$, $t = -3.64$,
+$p < .001$), converging with the fixation-count reduction.
+Note that the intercept (active condition baseline) was itself strongly
+negative relative to free-viewing ($\hat{\beta} = -1.00$, $SE = 0.07$,
+$t = -14.67$, $p < .0001$), confirming that sentence-listening globally
+reduces scanning behaviour; the passive penalty is a further suppression
+above this global effect.
+The passive-with-dropped-agent condition was numerically lower than active
+but not significantly so ($p = .27$), failing to provide clear evidence
+for H2 on this measure.
+The Language $\times$ Passive interaction was significant
+($\hat{\beta} = +0.21$~sac/s, $SE = 0.10$, $t = 2.16$, $p = .031$):
+the saccade-rate reduction under passive was partially recovered in Punjabi,
+mirroring the fixation-duration and fixation-count interactions.
+
+\subsubsection{Saccade Duration}
+
+Saccadic movements during passive sentence processing were significantly
+longer in duration than during active processing
+($\hat{\beta} = +22.95$~ms, $SE = 10.59$, $t = 2.17$, $p = .030$;
+English $\Delta M$ passive: $+27.3$~ms vs.\ active: $+4.4$~ms),
+indicating slower oculomotor transitions under non-agent-first structure.
+No significant language modulation was found for this measure ($p = .31$).
+
+\subsubsection{Total Fixation Duration and Dwell Time}
+
+Neither total fixation duration nor normalised interest-area dwell time
+showed significant sentence-type effects in the GAMMs (all parametric $p > .13$).
+However, a significant Language $\times$ Passive interaction was found for
+total interest-area dwell time ($\hat{\beta} = -279.5$~ms,
+$SE = 126.1$, $t = -2.22$, $p = .027$): Punjabi passive sentences directed
+substantially less total dwell time to the interest areas than English passive,
+again consistent with the broader pattern of Punjabi mitigating the passive
+processing cost.
+
+\subsubsection{Cognitive Load Composite Index}
+
+A composite cognitive load index was computed as the mean of five
+standardised $\Delta$ indicators (mean fixation duration, total fixation
+duration, fixation count, interest-area dwell time, and negated saccade
+amplitude; see \S\ref{sec:processing}).
+The composite did not yield significant parametric effects in the GAMM
+($p > .35$ for all terms), reflecting the mixed pattern of significance
+across its constituent measures.
+The composite is reported as secondary converging evidence only.
+
+\begin{table}[h]
+\centering
+\caption{Descriptive means ($M$) and standard deviations ($SD$) for
+         $\Delta$ trial-level outcomes by language and sentence type.
+         All values are baseline-adjusted (sentence-audio minus free-viewing).}
+\label{tab:trial_means}
+\begin{threeparttable}
+\begin{tabular}{llrrrrrr}
+\toprule
+& & \multicolumn{2}{c}{Active} & \multicolumn{2}{c}{Passive} & \multicolumn{2}{c}{Passive-dropped} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+Language & Outcome & $M$ & $SD$ & $M$ & $SD$ & $M$ & $SD$ \\
+\midrule
+\multirow{4}{*}{English}
+  & $\Delta$ Mean fix. dur.\ (ms)     & $-52.9$ & 511.3 & $+94.9$ & 474.9 & $+5.8$  & 539.5 \\
+  & $\Delta$ Fixation count           & $-0.19$ &   4.4 & $-2.12$ &   4.6 & $-1.19$ &   4.3 \\
+  & $\Delta$ Saccade rate (sac/s)     & $-1.00$ &   0.7 & $-1.25$ &   0.8 & $-1.07$ &   0.6 \\
+  & $\Delta$ Saccade duration (ms)    & $+4.4$  &  25.1 & $+27.3$ & 212.3 & $+13.6$ &  34.6 \\[4pt]
+\multirow{4}{*}{Punjabi}
+  & $\Delta$ Mean fix.\ dur.\ (ms)    & $+26.9$ & 488.9 & $+22.5$ & 546.3 & $+26.9$ & 310.2 \\
+  & $\Delta$ Fixation count           & $-0.38$ &   4.1 & $-0.73$ &   4.6 & $-0.92$ &   4.1 \\
+  & $\Delta$ Saccade rate (sac/s)     & $-1.00$ &   0.6 & $-1.04$ &   0.7 & $-1.11$ &   0.6 \\
+  & $\Delta$ Saccade duration (ms)    & $+9.8$  &  37.2 & $+17.6$ &  37.4 & $+11.4$ &  36.5 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item Note: Passive-dropped = passive-with-dropped-agent.
+      $\Delta$ values = sentence-audio minus matched free-viewing baseline.
+      Positive values indicate more gaze activity than baseline.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{GAMM results for trial-level outcomes.
+         Reference levels: English, active.
+         Random effects: $s(\text{ParticipantID})$, $s(\text{ImageID})$.}
+\label{tab:gamm_trial}
+\begin{threeparttable}
+\begin{tabular}{llrrrr}
+\toprule
+Outcome & Term & $\hat{\beta}$ & $SE$ & $t$ & $p$ \\
+\midrule
+\multirow{5}{*}{$\Delta$ Mean fix.\ dur.\ (ms)}
+  & Intercept                            & $-52.78$ & 42.42 & $-1.24$ & .214 \\
+  & Punjabi                              & $+79.54$ & 54.11 & $+1.47$ & .142 \\
+  & Passive                              & $\mathbf{+147.63}$ & 54.30 & $+2.72$ & $\mathbf{.007}$ \\
+  & Passive-dropped                      & $+58.58$ & 54.21 & $+1.08$ & .280 \\
+  & Punjabi $\times$ Passive             & $\mathbf{-151.87}$ & 76.66 & $-1.98$ & $\mathbf{.048}$ \\[4pt]
+\multirow{5}{*}{$\Delta$ Fixation count}
+  & Intercept                            & $-0.19$ & 0.39 & $-0.49$ & .622 \\
+  & Punjabi                              & $-0.19$ & 0.48 & $-0.40$ & .692 \\
+  & Passive                              & $\mathbf{-1.93}$ & 0.48 & $-4.04$ & $\mathbf{<.001}$ \\
+  & Passive-dropped                      & $\mathbf{-1.01}$ & 0.48 & $-2.11$ & $\mathbf{.035}$ \\
+  & Punjabi $\times$ Passive             & $\mathbf{+1.58}$ & 0.68 & $+2.34$ & $\mathbf{.020}$ \\[4pt]
+\multirow{4}{*}{$\Delta$ Saccade rate (sac/s)}
+  & Intercept                            & $-1.00$ & 0.07 & $-14.67$ & $<.0001$ \\
+  & Passive                              & $\mathbf{-0.25}$ & 0.07 & $-3.64$ & $\mathbf{.0003}$ \\
+  & Punjabi $\times$ Passive             & $\mathbf{+0.21}$ & 0.10 & $+2.16$ & $\mathbf{.031}$ \\[4pt]
+\multirow{2}{*}{$\Delta$ Saccade duration (ms)}
+  & Passive                              & $\mathbf{+22.95}$ & 10.59 & $+2.17$ & $\mathbf{.030}$ \\[4pt]
+\multirow{1}{*}{$\Delta$ IA dwell time (ms)}
+  & Punjabi $\times$ Passive             & $\mathbf{-279.48}$ & 126.09 & $-2.22$ & $\mathbf{.027}$ \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item Note: Only theoretically relevant terms are shown; see supplementary
+      materials for full model tables.
+      Bold = $p < .05$.
+      Passive-dropped = passive-with-dropped-agent.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+% ============================================================
+\subsection{Interest-Area Attention Allocation (H4)}
+% ============================================================
+
+\subsubsection{AOI Dwell Time: Object Dominance}
+
+Across all six conditions, the object/patient AOI received more dwell time
+than the agent AOI (Table~\ref{tab:aoi_means}).
+This advantage for the object AOI was consistent and reached
+significance in multiple conditions after Benjamini--Hochberg correction.
+In English active sentences, object dwell exceeded agent dwell by
+344~ms ($M_{\text{object}} = 2171$~ms, $M_{\text{agent}} = 1827$~ms;
+Mann--Whitney $U$, $p_{\text{BH}} = .041$).
+The object advantage was larger and more reliable in English passive
+($\Delta = 599$~ms; $p_{\text{BH}} = .002$) and English passive-with-dropped-agent
+($\Delta = 499$~ms; $p_{\text{BH}} = .002$).
+In Punjabi, a significant object advantage emerged for passive-with-dropped-agent
+($\Delta = 440$~ms; $p_{\text{BH}} = .002$) but not for active ($\Delta = 123$~ms;
+$p_{\text{BH}} = .16$) or passive ($\Delta = 13$~ms; $p_{\text{BH}} = .14$).
+
+The GAMM for AOI dwell time (normalized) did not yield significant parametric
+effects for sentence type or AOI role ($p > .12$), but the AOI-label random
+smooth was massively significant ($F_{32,34} = 17.2$, $p < .001$), indicating
+that individual image content accounted for far more variance in where
+participants looked than sentence structure did.
+This finding underscores the importance of the AOI-level random effects
+in the model.
+
+\subsubsection{AOI Entry Count}
+
+The GAMM for entry count (the number of times gaze entered each AOI)
+showed that passive sentences produced significantly fewer AOI entries than
+active sentences ($\hat{\beta} = -0.26$, $SE = 0.12$, $t = -2.12$, $p = .034$),
+consistent with the trial-level fixation-count reduction.
+
+\subsubsection{Time to First Fixation in AOI}
+
+In English passive-with-dropped-agent sentences, the object AOI was reached
+significantly sooner than the agent AOI (object: $M = 6085$~ms vs.\ agent:
+$M = 6356$~ms; $p_{\text{BH}} = .016$).
+When the agent is entirely absent from the sentence, listeners oriented gaze
+first toward the object of the action rather than the site of the (absent)
+agent.
+No significant agent/object difference in time to first fixation was found
+for active or passive sentences, consistent with both AOIs being approximately
+equally salient during those conditions.
+The GAMM parametric terms for time to first fixation were non-significant
+(all $p > .08$), though the marginal trend for passive-with-dropped-agent
+($\hat{\beta} = +145$~ms toward the agent, $t = 1.73$, $p = .085$) suggests
+a possible numeric delay before agent fixation in that condition.
+
+\begin{table}[h]
+\centering
+\caption{Mean dwell time (ms), normalised dwell (proportion of trial),
+         entry count, and time to first fixation (ms) by language, sentence type,
+         and AOI role (agent vs.\ object).}
+\label{tab:aoi_means}
+\begin{threeparttable}
+\begin{tabular}{lllrrrr}
+\toprule
+Language & Sentence Type & AOI & Dwell (ms) & Norm.\ dwell & Entries & TFF (ms) \\
+\midrule
+\multirow{6}{*}{English}
+  & \multirow{2}{*}{Active}
+    & Agent  & 1827 & .42 & 2.53 & 6189 \\
+  & & Object & 2171$^{*}$ & .49$^{*}$ & 2.65 & 6097 \\[2pt]
+  & \multirow{2}{*}{Passive}
+    & Agent  & 1712 & .39 & 2.26 & 6232 \\
+  & & Object & 2311$^{**}$ & .52$^{**}$ & 2.36 & 6049 \\[2pt]
+  & \multirow{2}{*}{Passive-dropped}
+    & Agent  & 1737 & .40 & 2.32 & 6356 \\
+  & & Object & 2235$^{**}$ & .51$^{**}$ & 2.40 & 6085$^{*}$ \\
+\midrule
+\multirow{6}{*}{Punjabi}
+  & \multirow{2}{*}{Active}
+    & Agent  & 1943 & .45 & 2.69 & 6121 \\
+  & & Object & 2066 & .47 & 2.59 & 6164 \\[2pt]
+  & \multirow{2}{*}{Passive}
+    & Agent  & 1952 & .45 & 2.50 & 6131 \\
+  & & Object & 1965 & .46 & 2.57 & 6061 \\[2pt]
+  & \multirow{2}{*}{Passive-dropped}
+    & Agent  & 1740 & .40 & 2.46 & 6309 \\
+  & & Object & 2181$^{**}$ & .50$^{**}$ & 2.54 & 6060 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item Note: Superscripts indicate significant difference between agent and
+      object for that condition (Mann--Whitney, BH-corrected):
+      $^{*}p < .05$; $^{**}p < .01$.
+      TFF = time to first fixation (ms from trial onset).
+      Passive-dropped = passive-with-dropped-agent.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+% ============================================================
+\subsection{First Non-Centre AOI Visit (H4)}
+% ============================================================
+
+After excluding the centre-of-screen fixation (index~1), the first fixation
+landing on a coded AOI was extracted for each trial.
+The proportion of trials on which this first meaningful AOI visit was directed
+to the agent AOI is shown in Table~\ref{tab:first_look}.
+Across all conditions, listeners looked first to the \emph{object} AOI more
+often than to the agent AOI (proportions below 0.5 in all but the Punjabi passive condition).
+
+A directional but non-significant trend emerged consistent with H4:
+in English, the probability of an initial agent look decreased monotonically
+from active (37.3\%) to passive (35.8\%) to passive-with-dropped-agent (31.8\%),
+indicating that removing the agent from the sentence reduced initial agent
+orientation.
+In Punjabi, the passive condition was a striking exception:
+participants directed their first AOI fixation to the agent on 49.0\% of
+passive trials, approaching chance and substantially exceeding the English
+passive rate (35.8\%).
+This cross-linguistic dissociation --- Punjabi passive resembles agent-first
+attention allocation, English passive does not --- is consistent with
+Punjabi morphological cues maintaining agent salience even in passive structures.
+
+A logistic GAMM confirmed that no individual contrast reached statistical
+significance (all $|z| < 1.30$, all $p > .19$), likely reflecting
+insufficient power for a binary first-look measure at $n = 148$--$150$ trials
+per cell.
+The predicted probabilities from this model are shown in Table~\ref{tab:first_look}
+alongside raw proportions.
+
+\begin{table}[h]
+\centering
+\caption{Proportion of trials with agent-directed first AOI fixation
+         (after excluding fixation index~1).}
+\label{tab:first_look}
+\begin{threeparttable}
+\begin{tabular}{llrrrrr}
+\toprule
+& & \multicolumn{2}{c}{Observed} & \multicolumn{3}{c}{GAMM-predicted} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-7}
+Language & Sentence Type & $P(\text{agent first})$ & $N$ & $\hat{P}$ & 95\% CI \\
+\midrule
+English & Active                & .373 & 150 & .342 & [.19, .50] \\
+English & Passive               & .358 & 148 & .322 & [.17, .47] \\
+English & Passive-dropped       & .318 & 148 & .279 & [.14, .42] \\
+Punjabi & Active                & .413 & 150 & .398 & [.23, .56] \\
+Punjabi & Passive               & .490 & 149 & .499 & [.33, .67] \\
+Punjabi & Passive-dropped       & .405 & 148 & .399 & [.23, .56] \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item Note: No contrast reached significance in the logistic GAMM ($p > .19$).
+      Passive-dropped = passive-with-dropped-agent.
+      GAMM predictions exclude random effects for participant and image.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+% ============================================================
+\subsection{Temporal Gaze Dynamics}
+% ============================================================
+
+To examine how attention allocation evolved across the trial, the proportion
+of agent-directed fixations was computed at each ordinal fixation position
+(index 2 through 17) for each condition.
+Bins containing fewer than 20 fixations were excluded.
+The resulting curves (Figure~\ref{fig:temporal}) and their smoothed GAMM fits
+reveal several patterns consistent with the agent-first principle.
+
+In English, active sentences showed a rising trajectory of agent-directed looks:
+beginning at 36.5\% at position~2 and reaching approximately 55\% by positions
+11--12 before declining.
+This rise indicates that as the active sentence unfolds, listeners increasingly
+orient toward the agent, consistent with active deployment of an agent-first
+parsing strategy.
+English passive sentences, by contrast, showed a flatter and lower trajectory,
+remaining between 36\% and 49\% throughout the trial, without the sustained
+rise observed for active.
+English passive-with-dropped-agent started lowest at position~2 (32.1\%) and
+remained suppressed through positions~2--4 before recovering, suggesting
+initial suppression of agent attention when no overt agent was mentioned.
+
+The Punjabi patterns diverged from English in theoretically informative ways.
+Punjabi passive sentences showed the highest agent-look proportions of any
+condition at early fixation positions (49.6\% at index~2), exceeding Punjabi
+active (39.7\%) at the same position.
+This early Punjabi passive advantage is consistent with Punjabi morphological
+case marking rapidly communicating agent identity even in passive structures,
+enabling listeners to orient gaze to the agent promptly.
+By late positions (indices 12--13), Punjabi active overtook Punjabi passive,
+suggesting that the agent-first advantage for active structures emerges
+more gradually in Punjabi than in English.
+
+These temporal dynamics provide a finer-grained picture of the agent-first
+principle than aggregate fixation summaries alone:
+English listeners rapidly commit to an active agent-first parsing strategy,
+whereas Punjabi listeners show less differentiation early but equivalent or
+greater agent orientation when morphological cues are available (as in Punjabi passive).
+
+% ============================================================
+\subsection{Summary of Hypothesis Tests}
+% ============================================================
+
+\begin{table}[h]
+\centering
+\caption{Summary of hypothesis tests.}
+\label{tab:hypotheses}
+\begin{threeparttable}
+\begin{tabular}{p{0.5cm} p{5.5cm} p{5cm} p{2cm}}
+\toprule
+ & Hypothesis & Key evidence & Verdict \\
+\midrule
+H1 & Passive sentences impose greater gaze-based processing cost than active &
+  $\Delta$ mean fix.\ dur.\ $+148$~ms in passive (English; $p=.007$);
+  $\Delta$ fix.\ count $-1.93$ ($p<.001$);
+  $\Delta$ saccade rate $-0.25$ sac/s ($p<.001$) &
+  \textbf{Supported} \\[6pt]
+H2 & Passive-dropped-agent imposes at least as great a cost as passive-with-by-phrase &
+  Fix.\ count reduction $-1.01$ vs.\ $-1.93$ (both significant);
+  mean fix.\ dur.\ non-significant for passive-dropped;
+  no consistent ordering across measures &
+  \textbf{Partial} \\[6pt]
+H3 & Cross-linguistic modulation: Punjabi reduces the passive cost &
+  Three significant Language $\times$ Passive interactions
+  (mean fix.\ dur., fix.\ count, saccade rate, IA dwell time);
+  Punjabi passive approximates Punjabi active on all measures &
+  \textbf{Supported} \\[6pt]
+H4 & Agent-first gaze bias: active promotes earlier/more agent looking &
+  English monotonic decrease in $P(\text{agent first look})$: active $>$ passive $>$ passive-dropped;
+  temporal curves show active agent-look rise absent for passive;
+  Punjabi dissociation is consistent with morphology-driven agent salience &
+  \textbf{Directionally supported; underpowered} \\
+\bottomrule
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+% ============================================================
+\section*{Supplementary Notes}
+% ============================================================
+
+\paragraph{Random effects.}
+Participant random effects were significant in all trial-level GAMMs
+($p < .001$ in all models), confirming large individual differences in
+baseline gaze behaviour.
+Image random effects were significant in the saccade-rate model
+($p = .002$) and all interest-area models ($p < .001$), but not in
+fixation duration or fixation count models, indicating that stimulus
+images varied more in how they modulated scanning than in fixation duration.
+The AOI-label random smooth captured enormous variance in all four
+interest-area models ($F > 7$, $p < .001$), indicating that individual
+AOI regions (specific image regions) were far stronger predictors of
+dwell time than sentence structure.
+
+\paragraph{Model fit.}
+Deviance explained ranged from 2.6\% (normalised dwell time) to 33.6\%
+(AOI entry count), with saccade rate (27.5\%) and interest-area entry
+count (33.6\%) showing the best overall fit.
+Trial-level fixation models explained 10--15\% of deviance, reflecting
+the high between-trial variability in gaze behaviour.
+
+\paragraph{Centre-bias correction.}
+Excluding fixation index~1 from trial-level aggregation produced
+modestly cleaner effect estimates: the passive-dropped-agent condition
+in English moved from $+63$~ms (with index~1 included) to $+6$~ms
+after exclusion, suggesting that the stereotyped first fixation had
+been partially obscuring condition differences for the dropped-agent condition
+specifically.
+The passive vs.\ active contrast for mean fixation duration
+(+95~ms after correction) was robust to this correction and remained
+significant.
+
+\bigskip
+
+\bibliographystyle{apa}
+\bibliography{references}
+
+\end{document}

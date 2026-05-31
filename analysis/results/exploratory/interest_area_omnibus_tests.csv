@@ -1,0 +1,65 @@
+outcome,outcome_label,test,group,levels,statistic,p_value,language,aoi_role,sentence_type
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",4.379675048491619,0.11193493385275691,English,agent,
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",0.8104881176072458,0.666814049158493,English,agent,
+dwell_time,Dwell time,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",0.7342668548634449,0.6927172113995099,English,agent,
+entry_count,Entry count,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",3.7807961675554966,0.15101168156863695,English,agent,
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",0.26226064569932267,0.8771034603199409,English,object,
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",0.6218801780645455,0.7327577747817031,English,object,
+dwell_time,Dwell time,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",0.7249179085149537,0.6959628794055408,English,object,
+entry_count,Entry count,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",3.535294909107812,0.1707341766438477,English,object,
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",3.0164353949144487,0.22130405745494375,Punjabi,agent,
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",5.925292235046214,0.051681979484477295,Punjabi,agent,
+dwell_time,Dwell time,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",5.399768487715635,0.0672132926409149,Punjabi,agent,
+entry_count,Entry count,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",1.9850551234181484,0.3706386939279744,Punjabi,agent,
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",0.13685009348145794,0.9338634535899307,Punjabi,object,
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",1.7464789198020358,0.41759656839139936,Punjabi,object,
+dwell_time,Dwell time,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",2.4260366579288277,0.29729857891346084,Punjabi,object,
+entry_count,Entry count,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",0.29003170423464353,0.86500858078455,Punjabi,object,
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,language,"English, Punjabi",0.8088660090430997,0.3684557279678924,,agent,active
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,language,"English, Punjabi",0.8314629631440265,0.36184983883999966,,agent,active
+dwell_time,Dwell time,Kruskal-Wallis,language,"English, Punjabi",0.6168294681817,0.43222792125924525,,agent,active
+entry_count,Entry count,Kruskal-Wallis,language,"English, Punjabi",1.1665422550330693,0.28011285472494774,,agent,active
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,language,"English, Punjabi",0.36188093906326313,0.5474634613697863,,object,active
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,language,"English, Punjabi",0.4465360808782515,0.50398452097887,,object,active
+dwell_time,Dwell time,Kruskal-Wallis,language,"English, Punjabi",0.5272769967137316,0.46775392167902086,,object,active
+entry_count,Entry count,Kruskal-Wallis,language,"English, Punjabi",0.01593313178753457,0.8995526273732692,,object,active
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,language,"English, Punjabi",0.004518749797177292,0.9464052524531265,,agent,passive
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,language,"English, Punjabi",3.241542050553181,0.07179303614915716,,agent,passive
+dwell_time,Dwell time,Kruskal-Wallis,language,"English, Punjabi",2.4862684248266027,0.11484372778242118,,agent,passive
+entry_count,Entry count,Kruskal-Wallis,language,"English, Punjabi",3.6341231533608926,0.05660641525063803,,agent,passive
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,language,"English, Punjabi",0.2735106719318688,0.6009864470248081,,object,passive
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,language,"English, Punjabi",2.990017276668993,0.08377927465932788,,object,passive
+dwell_time,Dwell time,Kruskal-Wallis,language,"English, Punjabi",4.202384399684687,0.04036718231118116,,object,passive
+entry_count,Entry count,Kruskal-Wallis,language,"English, Punjabi",3.2214233056441484,0.0726804086714242,,object,passive
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,language,"English, Punjabi",0.750042010906813,0.38646293019622924,,agent,passive_dropped_agent
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,language,"English, Punjabi",0.02880584310825082,0.8652281093464074,,agent,passive_dropped_agent
+dwell_time,Dwell time,Kruskal-Wallis,language,"English, Punjabi",0.042024544449342255,0.8375729931225854,,agent,passive_dropped_agent
+entry_count,Entry count,Kruskal-Wallis,language,"English, Punjabi",1.3517903384117322,0.2449653711608913,,agent,passive_dropped_agent
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,language,"English, Punjabi",0.41457506667334104,0.5196564686916791,,object,passive_dropped_agent
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,language,"English, Punjabi",0.14442903008992491,0.7039170624916076,,object,passive_dropped_agent
+dwell_time,Dwell time,Kruskal-Wallis,language,"English, Punjabi",0.1912105962479521,0.661910953028758,,object,passive_dropped_agent
+entry_count,Entry count,Kruskal-Wallis,language,"English, Punjabi",0.7157468252494588,0.39754258125770037,,object,passive_dropped_agent
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,aoi_role,"agent, object",1.4577410273504172,0.22728988917569845,English,,active
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,aoi_role,"agent, object",6.097135559610035,0.01354011869649283,English,,active
+dwell_time,Dwell time,Kruskal-Wallis,aoi_role,"agent, object",5.86923858710313,0.015407714639506574,English,,active
+entry_count,Entry count,Kruskal-Wallis,aoi_role,"agent, object",0.5103357304555269,0.4749935570515966,English,,active
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,aoi_role,"agent, object",1.0360715366672315,0.30873689192875353,English,,passive
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,aoi_role,"agent, object",13.309117920235163,0.0002641185859726292,English,,passive
+dwell_time,Dwell time,Kruskal-Wallis,aoi_role,"agent, object",13.710259192179937,0.00021328619513470725,English,,passive
+entry_count,Entry count,Kruskal-Wallis,aoi_role,"agent, object",0.6512919371007807,0.4196511567390201,English,,passive
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,aoi_role,"agent, object",8.018942868838487,0.004629058253829986,English,,passive_dropped_agent
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,aoi_role,"agent, object",13.493073436798065,0.0002394456828445628,English,,passive_dropped_agent
+dwell_time,Dwell time,Kruskal-Wallis,aoi_role,"agent, object",14.666582935054223,0.00012830087744022912,English,,passive_dropped_agent
+entry_count,Entry count,Kruskal-Wallis,aoi_role,"agent, object",0.884333558343874,0.34701749350892785,English,,passive_dropped_agent
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,aoi_role,"agent, object",0.08939671356238083,0.7649455148049107,Punjabi,,active
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,aoi_role,"agent, object",0.6669891884503858,0.4141032864447638,Punjabi,,active
+dwell_time,Dwell time,Kruskal-Wallis,aoi_role,"agent, object",0.7813102148837383,0.3767407288284236,Punjabi,,active
+entry_count,Entry count,Kruskal-Wallis,aoi_role,"agent, object",0.2862581055543164,0.5926284634799786,Punjabi,,active
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,aoi_role,"agent, object",0.45569162375378247,0.4996444122706878,Punjabi,,passive
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,aoi_role,"agent, object",0.1531592404165282,0.6955343736424884,Punjabi,,passive
+dwell_time,Dwell time,Kruskal-Wallis,aoi_role,"agent, object",0.08811688532973057,0.7665849363480504,Punjabi,,passive
+entry_count,Entry count,Kruskal-Wallis,aoi_role,"agent, object",0.4441324343529426,0.5051346195096706,Punjabi,,passive
+time_to_first_fixation,Time to first fixation,Kruskal-Wallis,aoi_role,"agent, object",2.0051191633320293,0.15676897452240848,Punjabi,,passive_dropped_agent
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Kruskal-Wallis,aoi_role,"agent, object",12.382466807458666,0.00043338420582441126,Punjabi,,passive_dropped_agent
+dwell_time,Dwell time,Kruskal-Wallis,aoi_role,"agent, object",12.845779101004222,0.0003382413498897848,Punjabi,,passive_dropped_agent
+entry_count,Entry count,Kruskal-Wallis,aoi_role,"agent, object",0.17698014089588746,0.6739814080373789,Punjabi,,passive_dropped_agent

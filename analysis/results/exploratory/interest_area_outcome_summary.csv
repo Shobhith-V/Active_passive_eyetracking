@@ -1,0 +1,49 @@
+outcome,outcome_label,language,sentence_type,aoi_role,n,mean,sd,median,min,max
+time_to_first_fixation,Time to first fixation,English,active,agent,146,6189.424657534247,840.1743237473783,6005.5,5191.0,10004.0
+time_to_first_fixation,Time to first fixation,English,active,object,147,6097.061224489796,749.0671753669288,5921.0,5189.0,9580.0
+time_to_first_fixation,Time to first fixation,English,passive,agent,140,6232.128571428571,951.2759537510628,6000.0,5171.0,10236.0
+time_to_first_fixation,Time to first fixation,English,passive,object,145,6048.7793103448275,695.9812963339915,5926.0,5189.0,10734.0
+time_to_first_fixation,Time to first fixation,English,passive_dropped_agent,agent,145,6355.496551724138,939.0440331361372,6149.0,5177.0,10590.0
+time_to_first_fixation,Time to first fixation,English,passive_dropped_agent,object,145,6084.648275862069,706.76292122601,5972.0,5242.0,9940.0
+time_to_first_fixation,Time to first fixation,Punjabi,active,agent,142,6121.154929577465,761.6791109287246,5946.5,5194.0,8894.0
+time_to_first_fixation,Time to first fixation,Punjabi,active,object,143,6164.223776223776,917.4754125698119,5985.0,5213.0,10600.0
+time_to_first_fixation,Time to first fixation,Punjabi,passive,agent,146,6131.280821917808,668.9049594173398,5956.5,5187.0,9036.0
+time_to_first_fixation,Time to first fixation,Punjabi,passive,object,144,6060.909722222223,677.9132307576582,6015.0,5203.0,10706.0
+time_to_first_fixation,Time to first fixation,Punjabi,passive_dropped_agent,agent,143,6308.797202797203,974.911729911422,6070.0,5241.0,10812.0
+time_to_first_fixation,Time to first fixation,Punjabi,passive_dropped_agent,object,147,6059.8707482993195,561.8795302084286,6034.0,5181.0,8582.0
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,English,active,agent,150,0.41655471498627994,0.24299992926655026,0.40637265807619755,0.0,1.118051217988757
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,English,active,object,150,0.49295780074066076,0.2674354828710487,0.4935823721691242,0.0,1.4302059496567503
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,English,passive,agent,150,0.3940540469917036,0.24193657546483432,0.3857935707194641,0.0,1.0
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,English,passive,object,150,0.5215960690412074,0.29416018680045586,0.5036060380493306,0.0,1.7815873015873016
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,English,passive_dropped_agent,agent,150,0.3972916699429716,0.2520159974126252,0.3571925669162908,0.0,1.2734607218683651
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,English,passive_dropped_agent,object,150,0.5078758345790857,0.27253561967804074,0.4836741800278205,0.0,1.1908569085690857
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Punjabi,active,agent,150,0.44547140912926153,0.26079006756812645,0.43084223593249127,0.0,1.3934226552984166
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Punjabi,active,object,150,0.47173287738393566,0.27920237989253477,0.46422298663799955,0.0,1.5196037969459348
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Punjabi,passive,agent,150,0.45192967655381094,0.23864899192136507,0.41997575411081123,0.0,1.0
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Punjabi,passive,object,150,0.4563005696455978,0.2493109129617128,0.4690542170080185,0.0,1.1353074234011926
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Punjabi,passive_dropped_agent,agent,150,0.3990356584716443,0.27857799508970865,0.35346073878212136,0.0,1.6510191476219889
+dwell_time_normalized_by_trial_length,Dwell time normalized by trial length,Punjabi,passive_dropped_agent,object,150,0.49599300596872203,0.26449552673599847,0.49559290432236086,0.0,1.0
+dwell_time,Dwell time,English,active,agent,150,1826.8133333333333,1100.2381522958278,1733.0,0.0,5370.0
+dwell_time,Dwell time,English,active,object,150,2171.06,1230.1731270639655,2154.5,0.0,6875.0
+dwell_time,Dwell time,English,passive,agent,150,1712.1333333333334,1057.158466064272,1691.5,0.0,4333.0
+dwell_time,Dwell time,English,passive,object,150,2311.22,1365.5489388137294,2157.0,0.0,8418.0
+dwell_time,Dwell time,English,passive_dropped_agent,agent,150,1736.54,1125.4067877823456,1490.0,0.0,5998.0
+dwell_time,Dwell time,English,passive_dropped_agent,object,150,2235.4066666666668,1218.1837624717743,2075.0,0.0,5809.0
+dwell_time,Dwell time,Punjabi,active,agent,150,1943.18,1188.3346254938672,1861.5,0.0,6864.0
+dwell_time,Dwell time,Punjabi,active,object,150,2066.4333333333334,1277.190127992894,2017.0,0.0,7364.0
+dwell_time,Dwell time,Punjabi,passive,agent,150,1952.1133333333332,1077.3984608515038,1788.5,0.0,4960.0
+dwell_time,Dwell time,Punjabi,passive,object,150,1965.4533333333334,1113.4849916665544,1954.5,0.0,5521.0
+dwell_time,Dwell time,Punjabi,passive_dropped_agent,agent,150,1740.4,1268.7718947097496,1484.5,0.0,8019.0
+dwell_time,Dwell time,Punjabi,passive_dropped_agent,object,150,2180.7466666666664,1205.4167965945655,2162.5,0.0,4992.0
+entry_count,Entry count,English,active,agent,150,2.526666666666667,1.2515583127808423,2.0,0.0,6.0
+entry_count,Entry count,English,active,object,150,2.6533333333333333,1.356004131107062,2.5,0.0,7.0
+entry_count,Entry count,English,passive,agent,150,2.26,1.281934360526305,2.0,0.0,6.0
+entry_count,Entry count,English,passive,object,150,2.36,1.17741612220668,2.0,0.0,6.0
+entry_count,Entry count,English,passive_dropped_agent,agent,150,2.32,1.2708397054888472,2.0,0.0,6.0
+entry_count,Entry count,English,passive_dropped_agent,object,150,2.4,1.1292332731702956,2.0,0.0,6.0
+entry_count,Entry count,Punjabi,active,agent,150,2.6933333333333334,1.4421584618490348,3.0,0.0,7.0
+entry_count,Entry count,Punjabi,active,object,150,2.5866666666666664,1.2701353659648722,2.0,0.0,6.0
+entry_count,Entry count,Punjabi,passive,agent,150,2.5,1.1571197753459423,2.0,0.0,6.0
+entry_count,Entry count,Punjabi,passive,object,150,2.566666666666667,1.2174164892416257,3.0,0.0,6.0
+entry_count,Entry count,Punjabi,passive_dropped_agent,agent,150,2.46,1.2777391946968015,2.0,0.0,6.0
+entry_count,Entry count,Punjabi,passive_dropped_agent,object,150,2.54,1.2130719781451857,2.0,0.0,6.0

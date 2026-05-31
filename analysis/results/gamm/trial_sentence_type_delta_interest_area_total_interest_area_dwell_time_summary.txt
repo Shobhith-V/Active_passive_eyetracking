@@ -1,0 +1,68 @@
+Model: trial_sentence_type_delta_interest_area_total_interest_area_dwell_time 
+Family: trial_language_by_sentence_type 
+Outcome: delta_interest_area_total_interest_area_dwell_time 
+
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+delta_interest_area_total_interest_area_dwell_time ~ language * 
+    sentence_type + s(participant_id, bs = "re") + s(image_id, 
+    bs = "re")
+
+Parametric coefficients:
+                                                   Estimate Std. Error t value
+(Intercept)                                          -47.75      68.15  -0.701
+languagePunjabi                                       24.76      89.16   0.278
+sentence_typepassive                                  67.25      89.16   0.754
+sentence_typepassive_dropped_agent                   -74.80      89.16  -0.839
+languagePunjabi:sentence_typepassive                -279.48     126.09  -2.217
+languagePunjabi:sentence_typepassive_dropped_agent    14.55     126.09   0.115
+                                                   Pr(>|t|)  
+(Intercept)                                          0.4836  
+languagePunjabi                                      0.7813  
+sentence_typepassive                                 0.4509  
+sentence_typepassive_dropped_agent                   0.4017  
+languagePunjabi:sentence_typepassive                 0.0269 *
+languagePunjabi:sentence_typepassive_dropped_agent   0.9082  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Approximate significance of smooth terms:
+                        edf Ref.df     F  p-value    
+s(participant_id) 24.628108     49 1.011 7.29e-05 ***
+s(image_id)        0.009283     17 0.001    0.545    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+R-sq.(adj) =  0.0573   Deviance explained = 8.83%
+fREML =   7245  Scale est. = 5.9617e+05  n = 900
+
+AIC:
+[1] 14556.77
+
+GAM check:
+
+Method: fREML   Optimizer: perf newton
+full convergence after 9 iterations.
+Gradient range [-0.0003553518,-8.278406e-06]
+(score 7245.007 & scale 596165.6).
+Hessian positive definite, eigenvalue range [0.0003574544,447.3437].
+Model rank =  74 / 74 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                        k'      edf k-index p-value
+s(participant_id) 50.00000 24.62811      NA      NA
+s(image_id)       18.00000  0.00928      NA      NA
+$mfrow
+[1] 2 2
+
+
+Concurvity:
+         para s(participant_id)  s(image_id)
+worst       1      1.0000000000 1.0000000000
+observed    1      0.0002102557 0.0003695508
+estimate    1      0.0270898501 0.0566469488

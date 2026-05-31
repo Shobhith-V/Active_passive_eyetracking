@@ -1,0 +1,65 @@
+Model: trial_sentence_type_delta_saccade_mean_saccade_duration 
+Family: trial_language_by_sentence_type 
+Outcome: delta_saccade_mean_saccade_duration 
+
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+delta_saccade_mean_saccade_duration ~ language * sentence_type + 
+    s(participant_id, bs = "re") + s(image_id, bs = "re")
+
+Parametric coefficients:
+                                                   Estimate Std. Error t value
+(Intercept)                                           4.350      7.647   0.569
+languagePunjabi                                       5.493     10.568   0.520
+sentence_typepassive                                 22.953     10.586   2.168
+sentence_typepassive_dropped_agent                    9.228     10.586   0.872
+languagePunjabi:sentence_typepassive                -15.148     14.958  -1.013
+languagePunjabi:sentence_typepassive_dropped_agent   -7.633     14.971  -0.510
+                                                   Pr(>|t|)  
+(Intercept)                                          0.5696  
+languagePunjabi                                      0.6033  
+sentence_typepassive                                 0.0304 *
+sentence_typepassive_dropped_agent                   0.3836  
+languagePunjabi:sentence_typepassive                 0.3115  
+languagePunjabi:sentence_typepassive_dropped_agent   0.6103  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Approximate significance of smooth terms:
+                    edf Ref.df     F p-value
+s(participant_id) 7.813     49 0.190   0.178
+s(image_id)       1.439     17 0.092   0.356
+
+R-sq.(adj) =  0.0125   Deviance explained = 2.82%
+fREML = 5308.6  Scale est. = 8375.8    n = 897
+
+AIC:
+[1] 10672.67
+
+GAM check:
+
+Method: fREML   Optimizer: perf newton
+full convergence after 8 iterations.
+Gradient range [-4.043665e-05,0.0001472022]
+(score 5308.553 & scale 8375.847).
+Hessian positive definite, eigenvalue range [0.06001688,445.5353].
+Model rank =  74 / 74 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                     k'   edf k-index p-value
+s(participant_id) 50.00  7.81      NA      NA
+s(image_id)       18.00  1.44      NA      NA
+$mfrow
+[1] 2 2
+
+
+Concurvity:
+         para s(participant_id)  s(image_id)
+worst       1      1.0000000000 1.0000000000
+observed    1      0.0004850156 0.0002204456
+estimate    1      0.0253139295 0.0563428902

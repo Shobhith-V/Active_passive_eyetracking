@@ -1,0 +1,78 @@
+column,description
+participant_id,See source dataset or schema reports
+trial_id,See source dataset or schema reports
+language,See source dataset or schema reports
+session_type,See source dataset or schema reports
+sentence_type,See source dataset or schema reports
+fixation_trial_length_ms,See source dataset or schema reports
+fixation_total_fixation_duration,See source dataset or schema reports
+fixation_mean_fixation_duration,See source dataset or schema reports
+fixation_fixation_count,See source dataset or schema reports
+fixation_mean_fixation_x,See source dataset or schema reports
+fixation_mean_fixation_y,See source dataset or schema reports
+interest_area_trial_length_ms,See source dataset or schema reports
+interest_area_total_interest_area_dwell_time,See source dataset or schema reports
+interest_area_total_interest_area_entry_count,See source dataset or schema reports
+interest_area_min_time_to_first_fixation,See source dataset or schema reports
+interest_area_interest_area_dwell_time_normalized,See source dataset or schema reports
+saccade_trial_length_ms,See source dataset or schema reports
+saccade_mean_saccade_amplitude,See source dataset or schema reports
+saccade_saccade_count,See source dataset or schema reports
+saccade_mean_saccade_velocity,See source dataset or schema reports
+saccade_mean_saccade_duration,See source dataset or schema reports
+saccade_saccade_rate,See source dataset or schema reports
+audio,See source dataset or schema reports
+exp_id,See source dataset or schema reports
+image,See source dataset or schema reports
+image_id,See source dataset or schema reports
+sentence,See source dataset or schema reports
+stim_id,See source dataset or schema reports
+stimulus_file,See source dataset or schema reports
+voice_id,See source dataset or schema reports
+grammatical_voice,See source dataset or schema reports
+agent_first_alignment,active=agent_first; passive/passive_dropped_agent=non_agent_first
+agent_overt,active/passive=agent_overt; passive_dropped_agent=agent_dropped
+passive_cost_contrast,"0 for active, 1 for passive and passive_dropped_agent"
+dropped_agent_contrast,"0 for passive, 1 for passive_dropped_agent"
+baseline_fixation_trial_length_ms,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_fixation_total_fixation_duration,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_fixation_mean_fixation_duration,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_fixation_fixation_count,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_fixation_mean_fixation_x,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_fixation_mean_fixation_y,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_interest_area_trial_length_ms,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_interest_area_total_interest_area_dwell_time,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_interest_area_total_interest_area_entry_count,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_interest_area_min_time_to_first_fixation,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_interest_area_interest_area_dwell_time_normalized,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_saccade_trial_length_ms,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_saccade_mean_saccade_amplitude,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_saccade_saccade_count,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_saccade_mean_saccade_velocity,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_saccade_mean_saccade_duration,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_saccade_saccade_rate,"Free-viewing baseline for the same image, participant-specific when available"
+baseline_source,"Free-viewing baseline for the same image, participant-specific when available"
+delta_fixation_trial_length_ms,Sentence/audio value minus same-picture free-viewing baseline
+delta_fixation_total_fixation_duration,Sentence/audio value minus same-picture free-viewing baseline
+delta_fixation_mean_fixation_duration,Sentence/audio value minus same-picture free-viewing baseline
+delta_fixation_fixation_count,Sentence/audio value minus same-picture free-viewing baseline
+delta_fixation_mean_fixation_x,Sentence/audio value minus same-picture free-viewing baseline
+delta_fixation_mean_fixation_y,Sentence/audio value minus same-picture free-viewing baseline
+delta_interest_area_trial_length_ms,Sentence/audio value minus same-picture free-viewing baseline
+delta_interest_area_total_interest_area_dwell_time,Sentence/audio value minus same-picture free-viewing baseline
+delta_interest_area_total_interest_area_entry_count,Sentence/audio value minus same-picture free-viewing baseline
+delta_interest_area_min_time_to_first_fixation,Sentence/audio value minus same-picture free-viewing baseline
+delta_interest_area_interest_area_dwell_time_normalized,Sentence/audio value minus same-picture free-viewing baseline
+delta_saccade_trial_length_ms,Sentence/audio value minus same-picture free-viewing baseline
+delta_saccade_mean_saccade_amplitude,Sentence/audio value minus same-picture free-viewing baseline
+delta_saccade_saccade_count,Sentence/audio value minus same-picture free-viewing baseline
+delta_saccade_mean_saccade_velocity,Sentence/audio value minus same-picture free-viewing baseline
+delta_saccade_mean_saccade_duration,Sentence/audio value minus same-picture free-viewing baseline
+delta_saccade_saccade_rate,Sentence/audio value minus same-picture free-viewing baseline
+neg_delta_saccade_mean_saccade_amplitude,See source dataset or schema reports
+z_delta_fixation_mean_fixation_duration,See source dataset or schema reports
+z_delta_fixation_total_fixation_duration,See source dataset or schema reports
+z_delta_fixation_fixation_count,See source dataset or schema reports
+z_delta_interest_area_total_interest_area_dwell_time,See source dataset or schema reports
+z_neg_delta_saccade_mean_saccade_amplitude,See source dataset or schema reports
+cognitive_load_index,Mean of standardized baseline-adjusted load indicators; larger means greater inferred processing cost

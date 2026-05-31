@@ -1,0 +1,41 @@
+outcome,outcome_label,test,group,levels,statistic,p_value,language,sentence_type
+delta_fixation_mean_fixation_duration,Baseline-adjusted mean fixation duration,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",9.17159049607153,0.010195638501442405,English,
+delta_fixation_total_fixation_duration,Baseline-adjusted total fixation duration,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",2.792415032531766,0.24753395455401012,English,
+delta_fixation_fixation_count,Baseline-adjusted fixation count,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",14.133388488281257,0.000853048423055554,English,
+delta_saccade_saccade_rate,Baseline-adjusted saccade rate,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",9.079400596189998,0.010676605873197019,English,
+delta_saccade_mean_saccade_amplitude,Baseline-adjusted saccade amplitude,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",0.6452715286127386,0.7242375995167143,English,
+delta_saccade_mean_saccade_velocity,Baseline-adjusted saccade velocity,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",3.0911833697755164,0.21318569514425376,English,
+delta_saccade_mean_saccade_duration,Baseline-adjusted saccade duration,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",10.47754203557389,0.0053067747616333365,English,
+cognitive_load_index,Composite cognitive-load index,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",1.6874059620597563,0.4301148637225507,English,
+delta_fixation_mean_fixation_duration,Baseline-adjusted mean fixation duration,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",0.5236039348355916,0.7696634270525511,Punjabi,
+delta_fixation_total_fixation_duration,Baseline-adjusted total fixation duration,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",3.402555284921879,0.18245026886558638,Punjabi,
+delta_fixation_fixation_count,Baseline-adjusted fixation count,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",1.2019391182865768,0.5482797886247601,Punjabi,
+delta_saccade_saccade_rate,Baseline-adjusted saccade rate,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",1.3410769810780039,0.5114331017359586,Punjabi,
+delta_saccade_mean_saccade_amplitude,Baseline-adjusted saccade amplitude,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",2.109949732025143,0.3482011788802687,Punjabi,
+delta_saccade_mean_saccade_velocity,Baseline-adjusted saccade velocity,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",5.0897865708700465,0.07848142664516662,Punjabi,
+delta_saccade_mean_saccade_duration,Baseline-adjusted saccade duration,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",7.525960195688586,0.023214455839022926,Punjabi,
+cognitive_load_index,Composite cognitive-load index,Kruskal-Wallis,sentence_type,"active, passive, passive_dropped_agent",4.8492542990886705,0.08851111429985471,Punjabi,
+delta_fixation_mean_fixation_duration,Baseline-adjusted mean fixation duration,Kruskal-Wallis,language,"English, Punjabi",0.04479468438546519,0.8323820119379177,,active
+delta_fixation_total_fixation_duration,Baseline-adjusted total fixation duration,Kruskal-Wallis,language,"English, Punjabi",1.4656934272289153,0.22602640499314186,,active
+delta_fixation_fixation_count,Baseline-adjusted fixation count,Kruskal-Wallis,language,"English, Punjabi",0.34847037308975887,0.55498029450614,,active
+delta_saccade_saccade_rate,Baseline-adjusted saccade rate,Kruskal-Wallis,language,"English, Punjabi",0.06064230343304189,0.8054836188514836,,active
+delta_saccade_mean_saccade_amplitude,Baseline-adjusted saccade amplitude,Kruskal-Wallis,language,"English, Punjabi",0.8831645625692772,0.34733639378734404,,active
+delta_saccade_mean_saccade_velocity,Baseline-adjusted saccade velocity,Kruskal-Wallis,language,"English, Punjabi",3.3499446290144306,0.06720727407108737,,active
+delta_saccade_mean_saccade_duration,Baseline-adjusted saccade duration,Kruskal-Wallis,language,"English, Punjabi",4.295459716423468,0.03821426349011187,,active
+cognitive_load_index,Composite cognitive-load index,Kruskal-Wallis,language,"English, Punjabi",1.5457027685492903,0.21377095150511677,,active
+delta_fixation_mean_fixation_duration,Baseline-adjusted mean fixation duration,Kruskal-Wallis,language,"English, Punjabi",5.981670432974738,0.014455304858729569,,passive
+delta_fixation_total_fixation_duration,Baseline-adjusted total fixation duration,Kruskal-Wallis,language,"English, Punjabi",4.868321682445824,0.027354091307591772,,passive
+delta_fixation_fixation_count,Baseline-adjusted fixation count,Kruskal-Wallis,language,"English, Punjabi",5.879854618787563,0.015315086223762169,,passive
+delta_saccade_saccade_rate,Baseline-adjusted saccade rate,Kruskal-Wallis,language,"English, Punjabi",4.283148098434026,0.03849199323578395,,passive
+delta_saccade_mean_saccade_amplitude,Baseline-adjusted saccade amplitude,Kruskal-Wallis,language,"English, Punjabi",0.985349440715936,0.3208816743369366,,passive
+delta_saccade_mean_saccade_velocity,Baseline-adjusted saccade velocity,Kruskal-Wallis,language,"English, Punjabi",4.696912751677814,0.03021684835424193,,passive
+delta_saccade_mean_saccade_duration,Baseline-adjusted saccade duration,Kruskal-Wallis,language,"English, Punjabi",3.5153523611228787,0.06080272643983214,,passive
+cognitive_load_index,Composite cognitive-load index,Kruskal-Wallis,language,"English, Punjabi",4.345259800664508,0.03711210461513571,,passive
+delta_fixation_mean_fixation_duration,Baseline-adjusted mean fixation duration,Kruskal-Wallis,language,"English, Punjabi",0.1833818688151041,0.6684828812490535,,passive_dropped_agent
+delta_fixation_total_fixation_duration,Baseline-adjusted total fixation duration,Kruskal-Wallis,language,"English, Punjabi",1.2710045379574695,0.2595783138397583,,passive_dropped_agent
+delta_fixation_fixation_count,Baseline-adjusted fixation count,Kruskal-Wallis,language,"English, Punjabi",0.09878090728703355,0.7532975266617292,,passive_dropped_agent
+delta_saccade_saccade_rate,Baseline-adjusted saccade rate,Kruskal-Wallis,language,"English, Punjabi",0.1264703946114878,0.7221200982164178,,passive_dropped_agent
+delta_saccade_mean_saccade_amplitude,Baseline-adjusted saccade amplitude,Kruskal-Wallis,language,"English, Punjabi",0.22271622270156827,0.6369780411755259,,passive_dropped_agent
+delta_saccade_mean_saccade_velocity,Baseline-adjusted saccade velocity,Kruskal-Wallis,language,"English, Punjabi",0.016834187016570468,0.8967668919336691,,passive_dropped_agent
+delta_saccade_mean_saccade_duration,Baseline-adjusted saccade duration,Kruskal-Wallis,language,"English, Punjabi",1.0386662752763391,0.3081318639687784,,passive_dropped_agent
+cognitive_load_index,Composite cognitive-load index,Kruskal-Wallis,language,"English, Punjabi",0.2750582502769703,0.599958661455526,,passive_dropped_agent

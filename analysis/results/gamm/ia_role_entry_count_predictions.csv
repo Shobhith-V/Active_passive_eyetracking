@@ -1,0 +1,13 @@
+"language","sentence_type","aoi_role","participant_id","image_id","ia_label","fit","se","lower","upper"
+"English","active","agent","edf01","IMG_01","o_box_man_pushed_box",2.51425440064324,0.151937985248047,2.21645594955707,2.81205285172941
+"Punjabi","active","agent","edf01","IMG_01","o_box_man_pushed_box",2.70479055371994,0.151937985248047,2.40699210263377,3.00258900480611
+"English","passive","agent","edf01","IMG_01","o_box_man_pushed_box",2.2565289472607,0.151937985248047,1.95873049617453,2.55432739834687
+"Punjabi","passive","agent","edf01","IMG_01","o_box_man_pushed_box",2.50282492215844,0.151937985248047,2.20502647107226,2.80062337324461
+"English","passive_dropped_agent","agent","edf01","IMG_01","o_box_man_pushed_box",2.32958734386502,0.151937985248047,2.03178889277885,2.62738579495119
+"Punjabi","passive_dropped_agent","agent","edf01","IMG_01","o_box_man_pushed_box",2.45201383235273,0.151937985248047,2.15421538126655,2.7498122834389
+"English","active","object","edf01","IMG_01","o_box_man_pushed_box",2.65884531738619,0.151937985248047,2.36104686630002,2.95664376847237
+"Punjabi","active","object","edf01","IMG_01","o_box_man_pushed_box",2.58932328438056,0.151937985248047,2.29152483329438,2.88712173546673
+"English","passive","object","edf01","IMG_01","o_box_man_pushed_box",2.36170347640966,0.151937985248047,2.06390502532349,2.65950192749584
+"Punjabi","passive","object","edf01","IMG_01","o_box_man_pushed_box",2.56582862803632,0.151937985248047,2.26803017695015,2.8636270791225
+"English","passive_dropped_agent","object","edf01","IMG_01","o_box_man_pushed_box",2.39532605457746,0.151937985248047,2.09752760349128,2.69312450566363
+"Punjabi","passive_dropped_agent","object","edf01","IMG_01","o_box_man_pushed_box",2.53563990587642,0.151937985248047,2.23784145479024,2.83343835696259

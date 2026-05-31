@@ -1,0 +1,65 @@
+Model: trial_sentence_type_cognitive_load_index 
+Family: trial_language_by_sentence_type 
+Outcome: cognitive_load_index 
+
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+cognitive_load_index ~ language * sentence_type + s(participant_id, 
+    bs = "re") + s(image_id, bs = "re")
+
+Parametric coefficients:
+                                                    Estimate Std. Error t value
+(Intercept)                                         0.031094   0.047566   0.654
+languagePunjabi                                     0.006257   0.062451   0.100
+sentence_typepassive                               -0.056607   0.062451  -0.906
+sentence_typepassive_dropped_agent                 -0.048971   0.062451  -0.784
+languagePunjabi:sentence_typepassive               -0.048308   0.088319  -0.547
+languagePunjabi:sentence_typepassive_dropped_agent  0.031176   0.088319   0.353
+                                                   Pr(>|t|)
+(Intercept)                                           0.513
+languagePunjabi                                       0.920
+sentence_typepassive                                  0.365
+sentence_typepassive_dropped_agent                    0.433
+languagePunjabi:sentence_typepassive                  0.585
+languagePunjabi:sentence_typepassive_dropped_agent    0.724
+
+Approximate significance of smooth terms:
+                        edf Ref.df     F p-value    
+s(participant_id) 2.402e+01     49 0.961 0.00013 ***
+s(image_id)       1.540e-05     17 0.000 0.81953    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+R-sq.(adj) =  0.049   Deviance explained = 7.97%
+fREML = 750.59  Scale est. = 0.29251   n = 900
+
+AIC:
+[1] 1481.424
+
+GAM check:
+
+Method: fREML   Optimizer: perf newton
+full convergence after 10 iterations.
+Gradient range [-2.422351e-06,3.441464e-06]
+(score 750.5902 & scale 0.2925107).
+Hessian positive definite, eigenvalue range [2.422354e-06,447.3267].
+Model rank =  74 / 74 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                        k'      edf k-index p-value
+s(participant_id) 5.00e+01 2.40e+01      NA      NA
+s(image_id)       1.80e+01 1.54e-05      NA      NA
+$mfrow
+[1] 2 2
+
+
+Concurvity:
+         para s(participant_id)  s(image_id)
+worst       1      1.000000e+00 1.000000e+00
+observed    1      4.810687e-06 5.737591e-05
+estimate    1      2.708985e-02 5.664695e-02

@@ -1,0 +1,46 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+prop_agent_look ~ s(fixation_index, by = condition, k = 8) + 
+    condition
+
+Parametric coefficients:
+                                        Estimate Std. Error t value Pr(>|t|)
+(Intercept)                             0.461882   0.011547  40.000   <2e-16
+conditionPunjabi.active                 0.009313   0.016156   0.576    0.566
+conditionEnglish.passive               -0.014768   0.017218  -0.858    0.394
+conditionPunjabi.passive                0.015744   0.016308   0.965    0.337
+conditionEnglish.passive_dropped_agent -0.020414   0.017615  -1.159    0.250
+conditionPunjabi.passive_dropped_agent -0.030074   0.016597  -1.812    0.074
+                                          
+(Intercept)                            ***
+conditionPunjabi.active                   
+conditionEnglish.passive                  
+conditionPunjabi.passive                  
+conditionEnglish.passive_dropped_agent    
+conditionPunjabi.passive_dropped_agent .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Approximate significance of smooth terms:
+                                                           edf Ref.df     F
+s(fixation_index):conditionEnglish.active                2.124  2.653 3.685
+s(fixation_index):conditionPunjabi.active                1.391  1.685 4.648
+s(fixation_index):conditionEnglish.passive               1.000  1.000 9.419
+s(fixation_index):conditionPunjabi.passive               1.272  1.496 0.148
+s(fixation_index):conditionEnglish.passive_dropped_agent 3.932  4.756 4.088
+s(fixation_index):conditionPunjabi.passive_dropped_agent 1.333  1.594 1.168
+                                                         p-value   
+s(fixation_index):conditionEnglish.active                0.03011 * 
+s(fixation_index):conditionPunjabi.active                0.02992 * 
+s(fixation_index):conditionEnglish.passive               0.00299 **
+s(fixation_index):conditionPunjabi.passive               0.73008   
+s(fixation_index):conditionEnglish.passive_dropped_agent 0.00289 **
+s(fixation_index):conditionPunjabi.passive_dropped_agent 0.21003   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+R-sq.(adj) =   0.38   Deviance explained = 49.1%
+-REML = -113.76  Scale est. = 0.1765    n = 92

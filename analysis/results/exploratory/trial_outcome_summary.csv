@@ -1,0 +1,49 @@
+outcome,outcome_label,language,sentence_type,agent_first_alignment,agent_overt,n,mean,sd,median,min,max
+delta_fixation_mean_fixation_duration,Baseline-adjusted mean fixation duration,English,active,agent_first,agent_overt,150,-52.852324947197815,511.26820399269764,4.886363636363627,-4325.545454545455,936.125
+delta_fixation_mean_fixation_duration,Baseline-adjusted mean fixation duration,English,passive,non_agent_first,agent_overt,148,94.91821159852316,474.8673802487005,53.0365918803419,-1384.642857142857,4421.166666666667
+delta_fixation_mean_fixation_duration,Baseline-adjusted mean fixation duration,English,passive_dropped_agent,non_agent_first,agent_dropped,149,5.786310062094442,539.4779026935814,13.208333333333313,-4097.0,1758.0
+delta_fixation_mean_fixation_duration,Baseline-adjusted mean fixation duration,Punjabi,active,agent_first,agent_overt,150,26.907419741065493,488.93723088900447,4.033699633699656,-1938.4230769230771,3935.375
+delta_fixation_mean_fixation_duration,Baseline-adjusted mean fixation duration,Punjabi,passive,non_agent_first,agent_overt,150,22.479419553706222,546.2601516129704,8.4139037433155,-2878.25,4364.076923076923
+delta_fixation_mean_fixation_duration,Baseline-adjusted mean fixation duration,Punjabi,passive_dropped_agent,non_agent_first,agent_dropped,149,26.854297578858635,310.23383154622087,19.861904761904785,-1775.166666666667,1952.2727272727273
+delta_fixation_total_fixation_duration,Baseline-adjusted total fixation duration,English,active,agent_first,agent_overt,150,-73.51346938775511,537.6233295072681,-29.0,-4160.0,1677.0
+delta_fixation_total_fixation_duration,Baseline-adjusted total fixation duration,English,passive,non_agent_first,agent_overt,148,-40.689189189189186,368.7263212985828,14.5,-1690.0,780.0
+delta_fixation_total_fixation_duration,Baseline-adjusted total fixation duration,English,passive_dropped_agent,non_agent_first,agent_dropped,149,-149.9798657718121,512.4377809272103,-69.0,-2630.0,696.0
+delta_fixation_total_fixation_duration,Baseline-adjusted total fixation duration,Punjabi,active,agent_first,agent_overt,150,-104.17224489795919,415.81315328804504,-81.0,-3330.0,996.0
+delta_fixation_total_fixation_duration,Baseline-adjusted total fixation duration,Punjabi,passive,non_agent_first,agent_overt,150,-137.31333333333333,462.6180406111303,-68.0,-3022.0,1233.0
+delta_fixation_total_fixation_duration,Baseline-adjusted total fixation duration,Punjabi,passive_dropped_agent,non_agent_first,agent_dropped,149,-90.22147651006712,486.7150901657998,-27.0,-3182.0,876.0
+delta_fixation_fixation_count,Baseline-adjusted fixation count,English,active,agent_first,agent_overt,150,-0.1923809523809524,4.40259248831642,0.0,-12.0,15.0
+delta_fixation_fixation_count,Baseline-adjusted fixation count,English,passive,non_agent_first,agent_overt,148,-2.1216216216216215,4.55936713206685,-2.0,-15.0,16.0
+delta_fixation_fixation_count,Baseline-adjusted fixation count,English,passive_dropped_agent,non_agent_first,agent_dropped,149,-1.1879194630872483,4.304882720436552,-1.0,-11.0,10.0
+delta_fixation_fixation_count,Baseline-adjusted fixation count,Punjabi,active,agent_first,agent_overt,150,-0.3816326530612245,4.070860150791503,-1.0,-11.0,11.0
+delta_fixation_fixation_count,Baseline-adjusted fixation count,Punjabi,passive,non_agent_first,agent_overt,150,-0.7333333333333333,4.613471180260715,-1.0,-14.0,15.0
+delta_fixation_fixation_count,Baseline-adjusted fixation count,Punjabi,passive_dropped_agent,non_agent_first,agent_dropped,149,-0.9194630872483222,4.127227946284006,-1.0,-14.0,11.0
+delta_saccade_saccade_rate,Baseline-adjusted saccade rate,English,active,agent_first,agent_overt,150,-1.0023152408182456,0.6523669068565314,-1.0480032635909855,-3.3394188325311203,0.9596959273973504
+delta_saccade_saccade_rate,Baseline-adjusted saccade rate,English,passive,non_agent_first,agent_overt,149,-1.248552663677449,0.7583655043927113,-1.174284558600465,-4.228735066073987,1.2112690628920653
+delta_saccade_saccade_rate,Baseline-adjusted saccade rate,English,passive_dropped_agent,non_agent_first,agent_dropped,149,-1.0742715303563506,0.6439450521388713,-1.038240307668794,-3.131901928340272,0.7679782857100783
+delta_saccade_saccade_rate,Baseline-adjusted saccade rate,Punjabi,active,agent_first,agent_overt,150,-1.0027096908607378,0.6217687686766752,-1.0218694773539976,-2.471326861570764,0.8302826924589911
+delta_saccade_saccade_rate,Baseline-adjusted saccade rate,Punjabi,passive,non_agent_first,agent_overt,150,-1.043664565975618,0.6856272802570301,-1.077486281816212,-3.0442528763481236,1.3667891810885249
+delta_saccade_saccade_rate,Baseline-adjusted saccade rate,Punjabi,passive_dropped_agent,non_agent_first,agent_dropped,149,-1.106199032424244,0.6413558363163392,-1.0926666814025623,-3.473377583849225,0.4983973414977206
+delta_saccade_mean_saccade_amplitude,Baseline-adjusted saccade amplitude,English,active,agent_first,agent_overt,150,-0.1085726715339784,1.2812353179392808,-0.17460955710955683,-2.9624999999999995,8.159333333333334
+delta_saccade_mean_saccade_amplitude,Baseline-adjusted saccade amplitude,English,passive,non_agent_first,agent_overt,149,0.10178862061759197,2.3177042621343666,-0.14869047619047593,-4.201778846153847,23.304000000000002
+delta_saccade_mean_saccade_amplitude,Baseline-adjusted saccade amplitude,English,passive_dropped_agent,non_agent_first,agent_dropped,149,-0.22345587890440194,1.368341593882677,-0.21285714285714288,-7.568,3.250714285714285
+delta_saccade_mean_saccade_amplitude,Baseline-adjusted saccade amplitude,Punjabi,active,agent_first,agent_overt,150,-0.02760562123245561,1.29196101210678,-0.11371136173767794,-5.226666666666667,7.113376623376628
+delta_saccade_mean_saccade_amplitude,Baseline-adjusted saccade amplitude,Punjabi,passive,non_agent_first,agent_overt,150,0.1150664418870193,1.1690641829509405,-0.09760912698412838,-1.7852380952380948,5.853611111111113
+delta_saccade_mean_saccade_amplitude,Baseline-adjusted saccade amplitude,Punjabi,passive_dropped_agent,non_agent_first,agent_dropped,149,-0.13941378157025794,0.9570183512501395,-0.19431372549019565,-2.5295454545454548,4.889333333333333
+delta_saccade_mean_saccade_velocity,Baseline-adjusted saccade velocity,English,active,agent_first,agent_overt,150,1.135168148406337,52.48404778948406,-3.6200183150182994,-190.15666666666667,234.6263636363637
+delta_saccade_mean_saccade_velocity,Baseline-adjusted saccade velocity,English,passive,non_agent_first,agent_overt,149,14.649549550607926,85.24627766222515,3.0433653846153845,-127.86023809523807,830.2866666666667
+delta_saccade_mean_saccade_velocity,Baseline-adjusted saccade velocity,English,passive_dropped_agent,non_agent_first,agent_dropped,149,10.86929312407707,55.255866614063216,5.4630909090909086,-124.64780219780224,252.38846153846148
+delta_saccade_mean_saccade_velocity,Baseline-adjusted saccade velocity,Punjabi,active,agent_first,agent_overt,150,10.0689266799598,66.81828983839686,5.992205627705566,-157.30249999999995,550.1553846153846
+delta_saccade_mean_saccade_velocity,Baseline-adjusted saccade velocity,Punjabi,passive,non_agent_first,agent_overt,150,24.88397757274971,68.18108776905875,14.055054390054401,-269.90529411764703,338.0373333333333
+delta_saccade_mean_saccade_velocity,Baseline-adjusted saccade velocity,Punjabi,passive_dropped_agent,non_agent_first,agent_dropped,149,12.450933230245877,61.58970592847995,6.601153846153848,-109.14276190476193,558.0976666666664
+delta_saccade_mean_saccade_duration,Baseline-adjusted saccade duration,English,active,agent_first,agent_overt,150,4.368409697187979,25.117595972717318,1.1127450980392197,-60.558441558441544,121.33333333333334
+delta_saccade_mean_saccade_duration,Baseline-adjusted saccade duration,English,passive,non_agent_first,agent_overt,149,27.31334054294084,212.30032335656244,6.083333333333336,-72.0,2581.4
+delta_saccade_mean_saccade_duration,Baseline-adjusted saccade duration,English,passive_dropped_agent,non_agent_first,agent_dropped,149,13.57454016375135,34.594451355516355,8.430555555555562,-66.8611111111111,203.86666666666667
+delta_saccade_mean_saccade_duration,Baseline-adjusted saccade duration,Punjabi,active,agent_first,agent_overt,150,9.83753049870275,37.17294647672905,6.915384615384614,-66.9090909090909,301.6923076923077
+delta_saccade_mean_saccade_duration,Baseline-adjusted saccade duration,Punjabi,passive,non_agent_first,agent_overt,150,17.630182038284488,37.43795680921573,10.14305555555556,-128.47058823529414,265.2
+delta_saccade_mean_saccade_duration,Baseline-adjusted saccade duration,Punjabi,passive_dropped_agent,non_agent_first,agent_dropped,149,11.429093729846501,36.531573898481454,6.0,-50.40000000000001,282.4
+cognitive_load_index,Composite cognitive-load index,English,active,agent_first,agent_overt,150,0.03109377953158275,0.45651349116650347,0.0635704512639213,-2.3764385751928967,0.8743394156087094
+cognitive_load_index,Composite cognitive-load index,English,passive,non_agent_first,agent_overt,150,-0.02551371196388049,0.9164315134261591,0.07592344234304003,-9.886800226573307,2.0421091684155743
+cognitive_load_index,Composite cognitive-load index,English,passive_dropped_agent,non_agent_first,agent_dropped,150,-0.017877217751421128,0.4675293451846307,0.050328298774447916,-1.9229570684965929,1.5002734624615874
+cognitive_load_index,Composite cognitive-load index,Punjabi,active,agent_first,agent_overt,150,0.037351270459351875,0.388024015596238,0.011864893722325092,-1.2404222832233405,1.80377128326438
+cognitive_load_index,Composite cognitive-load index,Punjabi,passive,non_agent_first,agent_overt,150,-0.06756422013438934,0.4580081779306688,-0.010560531027071853,-2.8209574450751225,1.6265973288595659
+cognitive_load_index,Composite cognitive-load index,Punjabi,passive_dropped_agent,non_agent_first,agent_dropped,150,0.019556349938722625,0.4694363010901652,0.050933159849108775,-2.6533492937783683,1.5132754301541744

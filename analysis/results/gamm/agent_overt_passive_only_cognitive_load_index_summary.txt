@@ -1,0 +1,56 @@
+Model: agent_overt_passive_only_cognitive_load_index 
+Family: passive_only_language_by_agent_overt 
+Outcome: cognitive_load_index 
+
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+cognitive_load_index ~ language * agent_overt + s(participant_id, 
+    bs = "re") + s(image_id, bs = "re")
+
+Parametric coefficients:
+                                          Estimate Std. Error t value Pr(>|t|)
+(Intercept)                              -0.025514   0.052168  -0.489    0.625
+languagePunjabi                          -0.042051   0.068747  -0.612    0.541
+agent_overtagent_dropped                  0.007636   0.068747   0.111    0.912
+languagePunjabi:agent_overtagent_dropped  0.079484   0.097223   0.818    0.414
+
+Approximate significance of smooth terms:
+                        edf Ref.df     F p-value   
+s(participant_id) 1.850e+01     49 0.607 0.00684 **
+s(image_id)       1.584e-05     17 0.000 0.68361   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+R-sq.(adj) =  0.0452   Deviance explained = 7.95%
+fREML = 558.25  Scale est. = 0.35446   n = 600
+
+AIC:
+[1] 1107.218
+
+GAM check:
+
+Method: fREML   Optimizer: perf newton
+full convergence after 10 iterations.
+Gradient range [-1.513812e-06,2.166309e-06]
+(score 558.2548 & scale 0.354463).
+Hessian positive definite, eigenvalue range [1.513816e-06,298.2903].
+Model rank =  72 / 72 
+
+Basis dimension (k) checking results. Low p-value (k-index<1) may
+indicate that k is too low, especially if edf is close to k'.
+
+                        k'      edf k-index p-value
+s(participant_id) 5.00e+01 1.85e+01      NA      NA
+s(image_id)       1.80e+01 1.58e-05      NA      NA
+$mfrow
+[1] 2 2
+
+
+Concurvity:
+         para s(participant_id) s(image_id)
+worst       1        1.00000000  1.00000000
+observed    1        0.01848440  0.02449414
+estimate    1        0.03768401  0.08476676
